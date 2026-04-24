@@ -2,12 +2,12 @@
 
 This is a Git-friendly, Vercel-friendly static HTML/CSS website for Always Heating and Air Conditioning, an HVAC company serving Jacksonville, FL.
 
-The site is built for lead generation, local SEO, and fast static deployment. It uses no JavaScript, no React, no Tailwind, no Bootstrap, and no external libraries. The only script tags are JSON-LD structured data blocks for SEO.
+The site is built for lead generation, local SEO, and fast static deployment. It uses static HTML, CSS, and lightweight vanilla JavaScript for the modal estimate quiz, scroll reveals, video placeholder messaging, and interactive visuals. It does not use React, Tailwind, Bootstrap, or external frontend libraries.
 
 ## Project Structure
 
 ```text
-/always-hvac-site
+/Heating-Air
   index.html
   thank-you.html
   404.html
@@ -18,8 +18,16 @@ The site is built for lead generation, local SEO, and fast static deployment. It
   package.json
   README.md
   .gitignore
+  /api
+    estimate.js
   /css
     styles.css
+  /js
+    main.js
+  /assets
+    /images
+      hero-homeowners-van.jpg
+      tech-tablet.jpg
   /services
     ac-repair.html
     ac-installation.html
@@ -29,9 +37,8 @@ The site is built for lead generation, local SEO, and fast static deployment. It
     emergency-hvac.html
   /locations
     jacksonville-fl.html
-  /assets
-    /icons
-      icon.svg
+  /icons
+    icon.svg
 ```
 
 ## How to Open Locally
@@ -44,7 +51,7 @@ For a local static server:
 npm run dev
 ```
 
-This uses `npx serve .` and does not require production dependencies.
+This uses `npx serve .` and does not require production frontend dependencies. The Vercel Function at `/api/estimate` is intended to run on Vercel. Local static preview will show the site and modal quiz, but production email delivery should be tested after deployment.
 
 ## How to Deploy to Vercel
 
@@ -55,7 +62,27 @@ This uses `npx serve .` and does not require production dependencies.
 5. Leave the output directory blank.
 6. Deploy.
 
-The `vercel.json` file includes static routing support, security headers, and cache headers for CSS and assets.
+The `vercel.json` file includes static routing support, security headers, and cache headers for CSS and icons.
+
+## Estimate Form Handling
+
+The homepage estimate form is a modal quiz that posts to:
+
+```text
+/api/estimate
+```
+
+The Vercel Function validates the required quiz/contact fields and sends the lead by email through Resend. It does not hard-code private API keys.
+
+Add these environment variables in Vercel before using the form in production:
+
+```text
+RESEND_API_KEY=your_resend_api_key
+ESTIMATE_TO_EMAIL=where_leads_should_go@example.com
+ESTIMATE_FROM_EMAIL=Always HVAC <verified-sender@yourdomain.com>
+```
+
+`ESTIMATE_FROM_EMAIL` must be a sender verified in Resend. If these variables are missing, the function returns a clear configuration message instead of pretending the lead was captured.
 
 ## Editing Contact Info
 
@@ -68,21 +95,7 @@ Current placeholder contact details are:
 
 Replace these values across the HTML files, sitemap, structured data, and README when final client details are available.
 
-## Form Handling Note
-
-The estimate form is static and currently uses Netlify-style form attributes:
-
-```html
-method="POST"
-name="hvac-estimate"
-data-netlify="true"
-netlify-honeypot="bot-field"
-action="/thank-you.html"
-```
-
-If deploying on Vercel, you must connect the form to a form backend or third-party form handler. Static HTML alone cannot send email, store submissions, or process leads on Vercel without a form service.
-
-If using another backend, update the form `action`, remove or replace Netlify-specific attributes as needed, and keep the required legal/disclaimer language near the submit button.
+If using another backend instead of Resend, update the modal form `action` in `index.html` and replace `/api/estimate.js` with the new handler. Keep the required preliminary estimate and in-person diagnosis disclaimer near the submit button.
 
 ## SEO Notes
 

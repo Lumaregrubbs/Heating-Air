@@ -10,12 +10,12 @@
   <meta property="og:description" content="Jacksonville HVAC service done right the first time with honest diagnostics, clear recommendations, and no-pressure service.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.alwaysheatingair.com/">
-  <meta property="og:image" content="https://www.alwaysheatingair.com/assets/icons/icon.svg">
+  <meta property="og:image" content="https://www.alwaysheatingair.com/icons/icon.svg">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="HVAC Jacksonville FL | Always Heating and Air Conditioning">
   <meta name="twitter:description" content="Request a free preliminary HVAC estimate from Always Heating and Air Conditioning in Jacksonville, FL.">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="icon" href="/assets/icons/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="/icons/icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/css/styles.css">
   <script type="application/ld+json">
   {
@@ -103,7 +103,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="logo" href="/" aria-label="Always Heating and Air Conditioning home">
-        <img src="/assets/icons/icon.svg" alt="" width="42" height="42">
+        <img src="/icons/icon.svg" alt="" width="42" height="42">
         <span>Always Heating and Air Conditioning</span>
       </a>
       <input class="nav-toggle" type="checkbox" id="nav-toggle" aria-label="Toggle navigation">
@@ -115,19 +115,21 @@
         <a href="/locations/jacksonville-fl.html">Jacksonville</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a class="header-cta" href="#estimate">Get Free Estimate</a>
+      <a class="header-cta" href="#estimate" data-estimate-open>Get Free Estimate</a>
     </div>
   </header>
 
   <main id="main">
     <section class="hero section">
+      <div class="airflow airflow-one" aria-hidden="true"></div>
+      <div class="airflow airflow-two" aria-hidden="true"></div>
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">HVAC Jacksonville FL</p>
           <h1>Jacksonville HVAC Done Right the First Time</h1>
           <p class="lead">No guesswork. No pressure. Just honest diagnostics, clear recommendations, and HVAC service built to help you avoid unnecessary costs.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#estimate">Get Your Free HVAC Estimate</a>
+            <a class="btn btn-primary" href="#estimate" data-estimate-open>Get Your Free HVAC Estimate</a>
             <a class="btn btn-secondary" href="#services">See HVAC Services</a>
           </div>
           <ul class="trust-badges" aria-label="Service highlights">
@@ -137,15 +139,14 @@
             <li>Repair-First When Possible</li>
           </ul>
         </div>
-        <aside class="hero-card" aria-labelledby="hero-card-title">
-          <div class="visual-panel" aria-hidden="true">
-            <span class="visual-line one"></span>
-            <span class="visual-line two"></span>
-            <span class="visual-dot"></span>
+        <aside class="hero-card reveal" aria-labelledby="hero-card-title">
+          <div class="hero-mini-meter" aria-hidden="true">
+            <span></span>
+            <strong>Diagnosis-first service</strong>
           </div>
           <h2 id="hero-card-title">Not sure what's wrong?</h2>
           <p>Answer a few quick questions and request a free preliminary estimate. A professional diagnosis is required for final pricing.</p>
-          <a class="btn btn-primary btn-block" href="#estimate">Start Estimate Request</a>
+          <a class="btn btn-primary btn-block" href="#estimate" data-estimate-open>Start Estimate Request</a>
         </aside>
       </div>
     </section>
@@ -157,17 +158,17 @@
         <p class="lead">Always Heating and Air Conditioning is built around clear communication, proper diagnostics, and recommendations that make sense for your home, your system, and your budget.</p>
       </div>
       <div class="container mobile-snap">
-        <article class="card snap-card">
+        <article class="card snap-card reveal">
           <span class="card-mark">01</span>
           <h3>Clear Diagnosis</h3>
           <p>We look for the real cause of AC not cooling, heating issues, airflow concerns, or an HVAC system not turning on.</p>
         </article>
-        <article class="card snap-card">
+        <article class="card snap-card reveal">
           <span class="card-mark">02</span>
           <h3>Honest Options</h3>
           <p>You get repair, maintenance, or replacement information explained in plain language before work begins.</p>
         </article>
-        <article class="card snap-card">
+        <article class="card snap-card reveal">
           <span class="card-mark">03</span>
           <h3>Built for Long-Term Comfort</h3>
           <p>The goal is comfort that lasts, with no-pressure HVAC recommendations and a clear next step.</p>
@@ -184,22 +185,22 @@
           <p>Always Heating and Air Conditioning helps Jacksonville homeowners slow the process down, understand what is actually happening, and choose a next step with confidence.</p>
         </div>
         <div class="mobile-snap cols-2" aria-label="Common HVAC concerns">
-          <article class="card problem-card snap-card">
+          <article class="card problem-card snap-card reveal">
             <span class="card-mark">R</span>
             <h3>Repeat repairs</h3>
             <p>Recurring symptoms often need a more careful HVAC diagnosis.</p>
           </article>
-          <article class="card problem-card snap-card">
+          <article class="card problem-card snap-card reveal">
             <span class="card-mark">U</span>
             <h3>Unclear recommendations</h3>
             <p>Homeowners deserve to understand what is happening and why.</p>
           </article>
-          <article class="card problem-card snap-card">
+          <article class="card problem-card snap-card reveal">
             <span class="card-mark">C</span>
             <h3>Unexpected costs</h3>
             <p>Better information before work begins helps reduce surprises.</p>
           </article>
-          <article class="card problem-card snap-card">
+          <article class="card problem-card snap-card reveal">
             <span class="card-mark">P</span>
             <h3>Pressure to decide too quickly</h3>
             <p>Clear options make it easier to make a confident decision.</p>
@@ -214,22 +215,22 @@
         <h2>The Always Difference</h2>
       </div>
       <div class="container mobile-snap cols-4">
-        <article class="card snap-card">
+        <article class="card snap-card reveal">
           <span class="card-mark">D</span>
           <h3>Diagnose First</h3>
           <p>We inspect the system before making recommendations, so the next step is based on the actual issue.</p>
         </article>
-        <article class="card snap-card">
+        <article class="card snap-card reveal">
           <span class="card-mark">R</span>
           <h3>Repair When Possible</h3>
           <p>If a smart repair makes sense, that conversation comes before replacement.</p>
         </article>
-        <article class="card snap-card">
+        <article class="card snap-card reveal">
           <span class="card-mark">C</span>
           <h3>Clear Communication</h3>
           <p>You should understand what is happening, what your options are, and what comes next.</p>
         </article>
-        <article class="card snap-card">
+        <article class="card snap-card reveal">
           <span class="card-mark">N</span>
           <h3>No-Pressure Recommendations</h3>
           <p>Our goal is to help you make a confident decision without feeling rushed.</p>
@@ -243,48 +244,48 @@
         <h2>HVAC Services in Jacksonville, FL</h2>
       </div>
       <div class="container mobile-snap">
-        <article class="service-card snap-card">
+        <article class="service-card snap-card reveal">
           <span class="card-mark">AC</span>
-          <h3>AC Repair</h3>
+          <h3><a href="/services/ac-repair.html">AC Repair</a></h3>
           <p>Careful AC repair in Jacksonville, FL for warm air, airflow issues, short cycling, unusual sounds, and cooling problems.</p>
-          <a class="service-link" href="/services/ac-repair.html">Request Estimate</a>
+          <a class="service-link" href="#estimate" data-estimate-open>Request Estimate</a>
         </article>
-        <article class="service-card snap-card">
+        <article class="service-card snap-card reveal">
           <span class="card-mark">IN</span>
-          <h3>HVAC Installation</h3>
+          <h3><a href="/services/ac-installation.html">HVAC Installation</a></h3>
           <p>Air conditioning installation in Jacksonville with clear sizing conversations and practical system guidance.</p>
-          <a class="service-link" href="/services/ac-installation.html">Request Estimate</a>
+          <a class="service-link" href="#estimate" data-estimate-open>Request Estimate</a>
         </article>
-        <article class="service-card snap-card">
+        <article class="service-card snap-card reveal">
           <span class="card-mark">HT</span>
-          <h3>Heating Services</h3>
+          <h3><a href="/services/heating-services.html">Heating Services</a></h3>
           <p>Heating services in Jacksonville, FL for heat pumps, seasonal comfort, and systems that need professional attention.</p>
-          <a class="service-link" href="/services/heating-services.html">Request Estimate</a>
+          <a class="service-link" href="#estimate" data-estimate-open>Request Estimate</a>
         </article>
-        <article class="service-card snap-card">
+        <article class="service-card snap-card reveal">
           <span class="card-mark">PM</span>
-          <h3>Preventative Maintenance</h3>
+          <h3><a href="/services/maintenance.html">Preventative Maintenance</a></h3>
           <p>HVAC maintenance in Jacksonville to support reliability, airflow, and comfort before small issues grow.</p>
-          <a class="service-link" href="/services/maintenance.html">Request Estimate</a>
+          <a class="service-link" href="#estimate" data-estimate-open>Request Estimate</a>
         </article>
-        <article class="service-card snap-card">
+        <article class="service-card snap-card reveal">
           <span class="card-mark">DX</span>
-          <h3>System Diagnostics</h3>
+          <h3><a href="/services/diagnostics.html">System Diagnostics</a></h3>
           <p>HVAC diagnostics in Jacksonville that focus on finding the actual issue before recommending a repair.</p>
-          <a class="service-link" href="/services/diagnostics.html">Request Estimate</a>
+          <a class="service-link" href="#estimate" data-estimate-open>Request Estimate</a>
         </article>
-        <article class="service-card snap-card">
+        <article class="service-card snap-card reveal">
           <span class="card-mark">24</span>
-          <h3>Emergency HVAC Service</h3>
+          <h3><a href="/services/emergency-hvac.html">Emergency HVAC Service</a></h3>
           <p>Emergency HVAC Jacksonville, FL requests for urgent comfort problems and systems that need prompt attention.</p>
-          <a class="service-link" href="/services/emergency-hvac.html">Request Estimate</a>
+          <a class="service-link" href="#estimate" data-estimate-open>Request Estimate</a>
         </article>
       </div>
     </section>
 
     <section id="estimate" class="estimate section">
       <div class="container estimate-grid">
-        <div class="estimate-intro">
+        <div class="estimate-intro reveal">
           <p class="eyebrow">Free preliminary estimate</p>
           <h2>Get a Free Preliminary HVAC Estimate</h2>
           <p class="lead">Answer a few quick questions and Always Heating and Air Conditioning will follow up with the next best step.</p>
@@ -292,130 +293,46 @@
             <h3>What happens next?</h3>
             <p>After you submit the form, a professional from Always Heating and Air Conditioning will review your answers and follow up with the next best step. Online estimate requests are preliminary only. Final pricing requires an in-person diagnosis.</p>
           </div>
+          <a class="btn btn-primary" href="#estimate" data-estimate-open>Start Free Estimate Request</a>
         </div>
+        <figure class="tech-photo-card reveal">
+          <img src="/assets/images/tech-tablet.jpg" alt="Always Heating and Air Conditioning technician using a tablet beside an outdoor AC unit" width="1200" height="700">
+          <figcaption>
+            <strong>Schedule Professional Diagnosis</strong>
+            <span>Clear answers before major decisions.</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
 
-        <form class="quiz-form" name="hvac-estimate" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
-          <input type="hidden" name="form-name" value="hvac-estimate">
-          <p class="hidden-field">
-            <label>Do not fill this out if you are human: <input name="bot-field"></label>
-          </p>
-          <div class="form-header">
-            <span class="quiz-kicker">Smart HVAC Estimate Request</span>
-            <h3>Tell us what is happening</h3>
-            <p class="small-muted">Fields marked with an asterisk are required.</p>
+    <section class="diagnosis-meter-section section">
+      <div class="container split-grid">
+        <div class="reveal">
+          <p class="eyebrow">Illustration</p>
+          <h2>Why the Right Diagnosis Matters</h2>
+          <p class="lead">An accurate diagnosis helps turn symptoms into clear options before money is spent.</p>
+          <p>HVAC symptoms can be confusing at first. Always Heating and Air Conditioning focuses on moving from unclear symptoms to a focused diagnosis and then to the right next step for your system.</p>
+          <a class="btn btn-secondary" href="#estimate" data-estimate-open>Schedule Professional Diagnosis</a>
+        </div>
+        <div class="diagnosis-meter reveal" data-meter>
+          <div class="meter-fan" aria-hidden="true"></div>
+          <p class="small-muted">Illustration only. Not pricing or savings data.</p>
+          <div class="meter-row">
+            <span>Symptoms</span>
+            <div class="meter-track"><i class="meter-fill fill-one"></i></div>
+            <strong>Unclear</strong>
           </div>
-
-          <fieldset>
-            <legend>Lead Info</legend>
-            <div class="field-grid two">
-              <div class="field">
-                <label for="full-name">Full Name *</label>
-                <input id="full-name" name="full-name" type="text" autocomplete="name" required>
-              </div>
-              <div class="field">
-                <label for="phone">Phone Number *</label>
-                <input id="phone" name="phone" type="tel" autocomplete="tel" required>
-              </div>
-              <div class="field">
-                <label for="email">Email Address *</label>
-                <input id="email" name="email" type="email" autocomplete="email" required>
-              </div>
-              <div class="field">
-                <label for="zip">ZIP Code *</label>
-                <input id="zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" required>
-              </div>
-              <div class="field full">
-                <label for="street-address">Street Address <span>(optional)</span></label>
-                <input id="street-address" name="street-address" type="text" autocomplete="street-address">
-              </div>
-            </div>
-            <div class="radio-group compact" role="radiogroup" aria-label="Preferred Contact Method">
-              <p class="question-label">Preferred Contact Method *</p>
-              <label class="radio-card"><input type="radio" name="preferred-contact" value="Phone" required><span>Phone</span></label>
-              <label class="radio-card"><input type="radio" name="preferred-contact" value="Text"><span>Text</span></label>
-              <label class="radio-card"><input type="radio" name="preferred-contact" value="Email"><span>Email</span></label>
-            </div>
-          </fieldset>
-
-          <fieldset>
-            <legend>1. What's going on with your system?</legend>
-            <div class="radio-group">
-              <label class="radio-card"><input type="radio" name="system-issue" value="Not cooling properly" required><span>Not cooling properly</span></label>
-              <label class="radio-card"><input type="radio" name="system-issue" value="Not heating properly"><span>Not heating properly</span></label>
-              <label class="radio-card"><input type="radio" name="system-issue" value="System won't turn on"><span>System won't turn on</span></label>
-              <label class="radio-card"><input type="radio" name="system-issue" value="Strange noise or smell"><span>Strange noise or smell</span></label>
-              <label class="radio-card"><input type="radio" name="system-issue" value="Just needs maintenance"><span>Just needs maintenance</span></label>
-              <label class="radio-card"><input type="radio" name="system-issue" value="Not sure"><span>Not sure</span></label>
-            </div>
-          </fieldset>
-
-          <fieldset>
-            <legend>2. What type of system do you have?</legend>
-            <div class="radio-group compact">
-              <label class="radio-card"><input type="radio" name="system-type" value="Central AC" required><span>Central AC</span></label>
-              <label class="radio-card"><input type="radio" name="system-type" value="Heat pump"><span>Heat pump</span></label>
-              <label class="radio-card"><input type="radio" name="system-type" value="Furnace"><span>Furnace</span></label>
-              <label class="radio-card"><input type="radio" name="system-type" value="Not sure"><span>Not sure</span></label>
-            </div>
-          </fieldset>
-
-          <fieldset>
-            <legend>3. How old is your system?</legend>
-            <div class="radio-group compact">
-              <label class="radio-card"><input type="radio" name="system-age" value="0-5 years" required><span>0-5 years</span></label>
-              <label class="radio-card"><input type="radio" name="system-age" value="6-10 years"><span>6-10 years</span></label>
-              <label class="radio-card"><input type="radio" name="system-age" value="10+ years"><span>10+ years</span></label>
-              <label class="radio-card"><input type="radio" name="system-age" value="Not sure"><span>Not sure</span></label>
-            </div>
-          </fieldset>
-
-          <fieldset>
-            <legend>4. What best describes your situation?</legend>
-            <div class="radio-group compact">
-              <label class="radio-card"><input type="radio" name="situation" value="Just started happening" required><span>Just started happening</span></label>
-              <label class="radio-card"><input type="radio" name="situation" value="Been getting worse"><span>Been getting worse</span></label>
-              <label class="radio-card"><input type="radio" name="situation" value="Ongoing issue"><span>Ongoing issue</span></label>
-              <label class="radio-card"><input type="radio" name="situation" value="Emergency"><span>Emergency</span></label>
-            </div>
-          </fieldset>
-
-          <fieldset>
-            <legend>5. What matters most to you?</legend>
-            <div class="radio-group">
-              <label class="radio-card"><input type="radio" name="priority" value="Fix it as affordably as possible" required><span>Fix it as affordably as possible</span></label>
-              <label class="radio-card"><input type="radio" name="priority" value="Fix it correctly the first time"><span>Fix it correctly the first time</span></label>
-              <label class="radio-card"><input type="radio" name="priority" value="Need it working ASAP"><span>Need it working ASAP</span></label>
-              <label class="radio-card"><input type="radio" name="priority" value="Want a long-term solution"><span>Want a long-term solution</span></label>
-            </div>
-          </fieldset>
-
-          <fieldset>
-            <legend>6. When would you like service?</legend>
-            <div class="radio-group compact">
-              <label class="radio-card"><input type="radio" name="service-timing" value="Today" required><span>Today</span></label>
-              <label class="radio-card"><input type="radio" name="service-timing" value="Tomorrow"><span>Tomorrow</span></label>
-              <label class="radio-card"><input type="radio" name="service-timing" value="This week"><span>This week</span></label>
-              <label class="radio-card"><input type="radio" name="service-timing" value="Flexible"><span>Flexible</span></label>
-            </div>
-          </fieldset>
-
-          <fieldset>
-            <legend>7. Additional details</legend>
-            <div class="field">
-              <label for="additional-details">Describe the issue</label>
-              <textarea id="additional-details" name="additional-details" rows="5" placeholder="Tell us what you are noticing, when it started, and anything you have already tried."></textarea>
-            </div>
-          </fieldset>
-
-          <div class="agreement">
-            <label>
-              <input type="checkbox" name="pricing-acknowledgement" value="Acknowledged" required>
-              <span>I understand this online estimate request is preliminary. Final pricing requires an in-person diagnosis by an HVAC professional from Always Heating and Air Conditioning.</span>
-            </label>
+          <div class="meter-row">
+            <span>Diagnosis</span>
+            <div class="meter-track"><i class="meter-fill fill-two"></i></div>
+            <strong>Focused</strong>
           </div>
-          <button class="btn btn-primary btn-submit" type="submit">Request My Free HVAC Estimate</button>
-          <p class="form-disclaimer">Online estimates are preliminary only. Final pricing requires an in-person diagnosis by an HVAC professional.</p>
-        </form>
+          <div class="meter-row">
+            <span>Right Fix</span>
+            <div class="meter-track"><i class="meter-fill fill-three"></i></div>
+            <strong>Clear next step</strong>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -425,22 +342,22 @@
         <h2>How We Help You Get It Fixed Right</h2>
       </div>
       <div class="container mobile-snap cols-4">
-        <article class="process-card snap-card">
+        <article class="process-card snap-card reveal">
           <span class="process-number">1</span>
           <h3>Inspect &amp; Diagnose</h3>
           <p>First, we identify what is actually happening with your system.</p>
         </article>
-        <article class="process-card snap-card">
+        <article class="process-card snap-card reveal">
           <span class="process-number">2</span>
           <h3>Explain the Options</h3>
           <p>You get clear information before making a decision.</p>
         </article>
-        <article class="process-card snap-card">
+        <article class="process-card snap-card reveal">
           <span class="process-number">3</span>
           <h3>Fix the Right Problem</h3>
           <p>The goal is not just to get it running, but to fix the issue correctly.</p>
         </article>
-        <article class="process-card snap-card">
+        <article class="process-card snap-card reveal">
           <span class="process-number">4</span>
           <h3>Confirm Performance</h3>
           <p>We check the system so you can feel confident when the work is done.</p>
@@ -454,18 +371,50 @@
         <h2>What Customers Appreciate</h2>
       </div>
       <div class="container mobile-snap">
-        <blockquote class="testimonial-card snap-card">
+        <blockquote class="testimonial-card snap-card reveal">
           <p>"The technician explained what he was checking and why. I felt informed before deciding on the repair, which made the whole appointment much easier."</p>
           <cite>Melissa R., Jacksonville</cite>
         </blockquote>
-        <blockquote class="testimonial-card snap-card">
+        <blockquote class="testimonial-card snap-card reveal">
           <p>"I expected a hard sales conversation, but they walked me through the options calmly. We handled the immediate issue and talked about maintenance for later."</p>
           <cite>Daniel P., Jacksonville</cite>
         </blockquote>
-        <blockquote class="testimonial-card snap-card">
+        <blockquote class="testimonial-card snap-card reveal">
           <p>"They took the time to diagnose the problem instead of guessing. The explanation was clear, and the system has been running the way it should."</p>
           <cite>Karen T., Jacksonville</cite>
         </blockquote>
+      </div>
+    </section>
+
+    <section class="customer-stories section">
+      <div class="container section-head center narrow reveal">
+        <p class="eyebrow">Customer Stories</p>
+        <h2>Real Jacksonville HVAC Stories, Coming Soon</h2>
+        <p class="lead">Soon, you'll be able to hear directly from local homeowners about their experience with Always Heating and Air Conditioning.</p>
+        <p>Video testimonials are being prepared. Until then, you can still request a free preliminary estimate and speak with a professional about your system.</p>
+      </div>
+      <div class="container mobile-snap">
+        <button class="video-card snap-card reveal" type="button" data-video-message>
+          <!-- Future video embed goes here -->
+          <span class="coming-soon">Coming Soon</span>
+          <span class="play-button" aria-hidden="true"></span>
+          <strong>Customer Review</strong>
+          <span>A homeowner shares how clear communication helped them feel confident about the next step.</span>
+        </button>
+        <button class="video-card snap-card reveal" type="button" data-video-message>
+          <!-- Future video embed goes here -->
+          <span class="coming-soon">Coming Soon</span>
+          <span class="play-button" aria-hidden="true"></span>
+          <strong>Before &amp; After Comfort Story</strong>
+          <span>A future project story showing how proper diagnosis helped identify the right solution.</span>
+        </button>
+        <button class="video-card snap-card reveal" type="button" data-video-message>
+          <!-- Future video embed goes here -->
+          <span class="coming-soon">Coming Soon</span>
+          <span class="play-button" aria-hidden="true"></span>
+          <strong>Why Diagnosis Matters</strong>
+          <span>A short educational video explaining why guessing can lead to unnecessary costs.</span>
+        </button>
       </div>
     </section>
 
@@ -507,10 +456,160 @@
         <p class="eyebrow">Start with clarity</p>
         <h2>Before You Spend Money, Know What You're Dealing With</h2>
         <p>Start with a free preliminary estimate request and let Always Heating and Air Conditioning help you take the right next step.</p>
-        <a class="btn btn-primary" href="#estimate">Start Free Estimate Request</a>
+        <a class="btn btn-primary" href="#estimate" data-estimate-open>Start Free Estimate Request</a>
       </div>
     </section>
   </main>
+
+  <div class="modal-backdrop" id="estimate-modal" role="dialog" aria-modal="true" aria-labelledby="estimate-modal-title" hidden>
+    <div class="estimate-modal">
+      <button class="modal-close" type="button" data-modal-close aria-label="Close estimate quiz">Close</button>
+      <div class="modal-shell">
+        <div class="modal-intro">
+          <p class="eyebrow">Smart HVAC Estimate Quiz</p>
+          <h2 id="estimate-modal-title">Request a Free Preliminary HVAC Estimate</h2>
+          <p>Answer one question at a time. A professional from Always Heating and Air Conditioning will review your request and follow up with the next best step.</p>
+          <div class="comfort-gauge" aria-hidden="true">
+            <span></span>
+          </div>
+        </div>
+
+        <form class="modal-quiz-form" id="estimate-quiz-form" method="POST" action="/api/estimate" novalidate>
+          <!-- Vercel form handling lives in /api/estimate.js. Configure RESEND_API_KEY, ESTIMATE_TO_EMAIL, and ESTIMATE_FROM_EMAIL in Vercel before using this form in production. -->
+          <input type="hidden" name="source" value="Homepage modal quiz">
+          <div class="quiz-progress" aria-label="Estimate quiz progress">
+            <span id="quiz-progress-text">Step 1 of 8</span>
+            <div class="quiz-progress-track"><span id="quiz-progress-bar"></span></div>
+          </div>
+
+          <section class="quiz-step" data-step>
+            <h3>What's going on with your system?</h3>
+            <div class="radio-group">
+              <label class="radio-card"><input type="radio" name="systemIssue" value="Not cooling properly" required><span>Not cooling properly</span></label>
+              <label class="radio-card"><input type="radio" name="systemIssue" value="Not heating properly"><span>Not heating properly</span></label>
+              <label class="radio-card"><input type="radio" name="systemIssue" value="System won't turn on"><span>System won't turn on</span></label>
+              <label class="radio-card"><input type="radio" name="systemIssue" value="Strange noise or smell"><span>Strange noise or smell</span></label>
+              <label class="radio-card"><input type="radio" name="systemIssue" value="Just needs maintenance"><span>Just needs maintenance</span></label>
+              <label class="radio-card"><input type="radio" name="systemIssue" value="Not sure"><span>Not sure</span></label>
+            </div>
+          </section>
+
+          <section class="quiz-step" data-step hidden>
+            <h3>What type of system do you have?</h3>
+            <div class="radio-group">
+              <label class="radio-card"><input type="radio" name="systemType" value="Central AC" required><span>Central AC</span></label>
+              <label class="radio-card"><input type="radio" name="systemType" value="Heat pump"><span>Heat pump</span></label>
+              <label class="radio-card"><input type="radio" name="systemType" value="Furnace"><span>Furnace</span></label>
+              <label class="radio-card"><input type="radio" name="systemType" value="Not sure"><span>Not sure</span></label>
+            </div>
+          </section>
+
+          <section class="quiz-step" data-step hidden>
+            <h3>How old is your system?</h3>
+            <div class="radio-group">
+              <label class="radio-card"><input type="radio" name="systemAge" value="0-5 years" required><span>0-5 years</span></label>
+              <label class="radio-card"><input type="radio" name="systemAge" value="6-10 years"><span>6-10 years</span></label>
+              <label class="radio-card"><input type="radio" name="systemAge" value="10+ years"><span>10+ years</span></label>
+              <label class="radio-card"><input type="radio" name="systemAge" value="Not sure"><span>Not sure</span></label>
+            </div>
+          </section>
+
+          <section class="quiz-step" data-step hidden>
+            <h3>What best describes your situation?</h3>
+            <div class="radio-group">
+              <label class="radio-card"><input type="radio" name="situation" value="Just started happening" required><span>Just started happening</span></label>
+              <label class="radio-card"><input type="radio" name="situation" value="Been getting worse"><span>Been getting worse</span></label>
+              <label class="radio-card"><input type="radio" name="situation" value="Ongoing issue"><span>Ongoing issue</span></label>
+              <label class="radio-card"><input type="radio" name="situation" value="Emergency"><span>Emergency</span></label>
+            </div>
+          </section>
+
+          <section class="quiz-step" data-step hidden>
+            <h3>What matters most to you?</h3>
+            <div class="radio-group">
+              <label class="radio-card"><input type="radio" name="priority" value="Fix it as affordably as possible" required><span>Fix it as affordably as possible</span></label>
+              <label class="radio-card"><input type="radio" name="priority" value="Fix it correctly the first time"><span>Fix it correctly the first time</span></label>
+              <label class="radio-card"><input type="radio" name="priority" value="Need it working ASAP"><span>Need it working ASAP</span></label>
+              <label class="radio-card"><input type="radio" name="priority" value="Want a long-term solution"><span>Want a long-term solution</span></label>
+            </div>
+          </section>
+
+          <section class="quiz-step" data-step hidden>
+            <h3>When would you like service?</h3>
+            <div class="radio-group">
+              <label class="radio-card"><input type="radio" name="serviceTiming" value="Today" required><span>Today</span></label>
+              <label class="radio-card"><input type="radio" name="serviceTiming" value="Tomorrow"><span>Tomorrow</span></label>
+              <label class="radio-card"><input type="radio" name="serviceTiming" value="This week"><span>This week</span></label>
+              <label class="radio-card"><input type="radio" name="serviceTiming" value="Flexible"><span>Flexible</span></label>
+            </div>
+          </section>
+
+          <section class="quiz-step" data-step hidden>
+            <h3>Additional details</h3>
+            <div class="field">
+              <label for="modal-additional-details">Describe the issue</label>
+              <textarea id="modal-additional-details" name="additionalDetails" rows="5" placeholder="Tell us what you are noticing, when it started, and anything you have already tried."></textarea>
+            </div>
+          </section>
+
+          <section class="quiz-step" data-step hidden>
+            <h3>Where should we follow up?</h3>
+            <div class="field-grid two">
+              <div class="field">
+                <label for="modal-full-name">Full Name *</label>
+                <input id="modal-full-name" name="fullName" type="text" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label for="modal-phone">Phone Number *</label>
+                <input id="modal-phone" name="phone" type="tel" autocomplete="tel" required>
+              </div>
+              <div class="field">
+                <label for="modal-email">Email Address *</label>
+                <input id="modal-email" name="email" type="email" autocomplete="email" required>
+              </div>
+              <div class="field">
+                <label for="modal-zip">ZIP Code *</label>
+                <input id="modal-zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" required>
+              </div>
+              <div class="field full">
+                <label for="modal-street-address">Street Address <span>(optional)</span></label>
+                <input id="modal-street-address" name="streetAddress" type="text" autocomplete="street-address">
+              </div>
+            </div>
+            <div class="radio-group compact" role="radiogroup" aria-label="Preferred Contact Method">
+              <p class="question-label">Preferred Contact Method *</p>
+              <label class="radio-card"><input type="radio" name="preferredContact" value="Phone" required><span>Phone</span></label>
+              <label class="radio-card"><input type="radio" name="preferredContact" value="Text"><span>Text</span></label>
+              <label class="radio-card"><input type="radio" name="preferredContact" value="Email"><span>Email</span></label>
+            </div>
+            <div class="agreement">
+              <label>
+                <input type="checkbox" name="acknowledgement" value="Acknowledged" required>
+                <span>I understand this online estimate request is preliminary. Final pricing requires an in-person diagnosis by an HVAC professional from Always Heating and Air Conditioning.</span>
+              </label>
+            </div>
+          </section>
+
+          <p class="quiz-error" id="quiz-error" aria-live="polite"></p>
+          <div class="quiz-controls">
+            <button class="btn btn-secondary" type="button" data-quiz-back>Back</button>
+            <button class="btn btn-primary" type="button" data-quiz-next>Next</button>
+            <button class="btn btn-primary" type="submit" data-quiz-submit hidden>Request My Free HVAC Estimate</button>
+          </div>
+          <p class="form-disclaimer">Online estimates are preliminary only. Final pricing requires an in-person diagnosis by an HVAC professional.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="message-modal" id="video-message" role="dialog" aria-modal="true" aria-labelledby="video-message-title" hidden>
+    <div class="message-card">
+      <button class="modal-close" type="button" data-message-close aria-label="Close message">Close</button>
+      <h2 id="video-message-title">Customer videos are coming soon.</h2>
+      <p>For now, request a free preliminary estimate and we'll help you take the right next step.</p>
+      <a class="btn btn-primary" href="#estimate" data-estimate-open>Request Free Estimate</a>
+    </div>
+  </div>
 
   <footer id="contact" class="site-footer">
     <div class="container footer-grid">
@@ -534,7 +633,7 @@
         <h3>Local</h3>
         <ul>
           <li><a href="/locations/jacksonville-fl.html">Jacksonville Location Page</a></li>
-          <li><a href="#estimate">Free HVAC Estimate</a></li>
+          <li><a href="#estimate" data-estimate-open>Free HVAC Estimate</a></li>
           <li><a href="/sitemap.xml">Sitemap</a></li>
         </ul>
       </div>
@@ -546,5 +645,6 @@
       </div>
     </div>
   </footer>
+  <script src="/js/main.js" defer></script>
 </body>
-</html> 
+</html>
