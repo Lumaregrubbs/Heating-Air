@@ -13,6 +13,8 @@
   --white: #ffffff;
   --success: #176f5d;
   --shadow: 0 18px 42px rgba(10, 36, 66, 0.12);
+  --grid-blue: rgba(14, 76, 146, 0.055);
+  --grid-orange: rgba(244, 124, 32, 0.06);
   --radius: 10px;
   --space: clamp(3.5rem, 7vw, 6.5rem);
   --container: 1160px;
@@ -111,8 +113,18 @@ ol {
   padding-block: var(--space);
 }
 
-.section-soft {
-  background: var(--soft);
+.section-soft,
+.section-grid {
+  background:
+    linear-gradient(var(--grid-blue) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-blue) 1px, transparent 1px),
+    radial-gradient(circle at 88% 14%, rgba(255, 176, 102, 0.12), transparent 28%),
+    var(--soft);
+  background-size: 34px 34px, 34px 34px, auto, auto;
+}
+
+.section-grid:not(.section-soft) {
+  background-color: #f8fbfe;
 }
 
 .section-blue {
@@ -129,6 +141,134 @@ ol {
 
 .section-blue p {
   color: rgba(255, 255, 255, 0.82);
+}
+
+.final-image-cta {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(7, 25, 47, 0.94), rgba(7, 25, 47, 0.76)),
+    url("../assets/images/hero-homeowners-van.jpg") center / cover no-repeat;
+}
+
+.final-image-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+  background-size: 38px 38px;
+  pointer-events: none;
+}
+
+.final-image-cta .container {
+  position: relative;
+  z-index: 1;
+}
+
+.problem-section {
+  color: var(--white);
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    radial-gradient(circle at 12% 20%, rgba(31, 126, 214, 0.26), transparent 30%),
+    radial-gradient(circle at 86% 18%, rgba(244, 124, 32, 0.18), transparent 28%),
+    linear-gradient(135deg, #07192f, #102033 58%, #0e4c92);
+  background-size: 38px 38px, 38px 38px, auto, auto, auto;
+}
+
+.problem-section h2,
+.problem-section .eyebrow {
+  color: var(--white);
+}
+
+.problem-section .lead,
+.problem-section p {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.problem-section .problem-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(10px);
+}
+
+.choice-section {
+  background:
+    linear-gradient(var(--grid-blue) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-blue) 1px, transparent 1px),
+    radial-gradient(circle at 84% 18%, rgba(244, 124, 32, 0.16), transparent 30%),
+    #ffffff;
+  background-size: 34px 34px, 34px 34px, auto, auto;
+}
+
+.choice-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  gap: clamp(1.4rem, 4vw, 3rem);
+  align-items: center;
+  padding: clamp(1.25rem, 4vw, 2.2rem);
+  border: 1px solid rgba(14, 76, 146, 0.18);
+  border-radius: 18px;
+  color: var(--white);
+  background:
+    radial-gradient(circle at 92% 8%, rgba(244, 124, 32, 0.24), transparent 28%),
+    linear-gradient(135deg, #07192f, #102033 54%, #0e4c92);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.choice-panel h2,
+.choice-panel .eyebrow {
+  color: var(--white);
+}
+
+.choice-panel .lead {
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.choice-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.choice-list span {
+  position: relative;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  padding: 0.85rem 0.9rem 0.85rem 2.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius);
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.08);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.choice-list span::before {
+  content: "";
+  position: absolute;
+  left: 0.9rem;
+  width: 1.05rem;
+  height: 1.05rem;
+  border: 2px solid var(--orange-2);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, var(--orange) 0 35%, transparent 38%),
+    rgba(244, 124, 32, 0.12);
+}
+
+.section-head h2,
+.diagnosis-copy h2,
+.final-image-cta h2,
+.choice-panel h2 {
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
 .eyebrow {
@@ -822,7 +962,7 @@ ol {
 .service-card {
   display: flex;
   flex-direction: column;
-  min-height: 300px;
+  min-height: 285px;
   position: relative;
   overflow: hidden;
   background:
@@ -926,9 +1066,29 @@ ol {
 }
 
 .diagnosis-meter-section {
+  color: var(--white);
   background:
-    radial-gradient(circle at 78% 16%, rgba(244, 124, 32, 0.14), transparent 32%),
-    linear-gradient(180deg, #ffffff, var(--soft));
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    radial-gradient(circle at 78% 16%, rgba(244, 124, 32, 0.2), transparent 32%),
+    linear-gradient(135deg, #07192f, #102033 52%, #0e4c92);
+  background-size: 42px 42px, 42px 42px, auto, auto;
+}
+
+.diagnosis-meter-section h2,
+.diagnosis-meter-section .eyebrow {
+  color: var(--white);
+}
+
+.diagnosis-meter-section .lead,
+.diagnosis-meter-section p {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.diagnosis-meter-section .btn-secondary {
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .diagnosis-layout {
@@ -965,10 +1125,18 @@ ol {
   display: grid;
   gap: 1rem;
   padding: clamp(1.2rem, 4vw, 2rem);
-  border: 1px solid var(--line);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: var(--radius);
-  background: var(--white);
-  box-shadow: var(--shadow);
+  color: var(--white);
+  background: rgba(16, 32, 51, 0.74);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(16px);
+}
+
+.diagnosis-meter .small-muted,
+.diagnosis-meter strong,
+.diagnosis-meter span {
+  color: rgba(255, 255, 255, 0.88);
 }
 
 .meter-fan {
@@ -993,7 +1161,7 @@ ol {
   height: 14px;
   overflow: hidden;
   border-radius: 999px;
-  background: #e8eff6;
+  background: rgba(255, 255, 255, 0.16);
 }
 
 .meter-fill {
@@ -1019,8 +1187,11 @@ ol {
 
 .customer-stories {
   background:
+    linear-gradient(var(--grid-blue) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-blue) 1px, transparent 1px),
     radial-gradient(circle at 16% 12%, rgba(244, 124, 32, 0.14), transparent 34%),
     linear-gradient(180deg, #ffffff, var(--soft));
+  background-size: 34px 34px, 34px 34px, auto, auto;
 }
 
 .video-card {
@@ -1803,8 +1974,8 @@ textarea:focus {
   }
 
   #services .mobile-snap {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0.55rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.45rem;
   }
 
   .mobile-snap .snap-card {
@@ -1838,8 +2009,18 @@ textarea:focus {
   #services .mobile-snap p,
   #services .service-link,
   .customer-stories .video-card > span:last-child {
-    font-size: clamp(0.68rem, 2.7vw, 0.82rem);
-    line-height: 1.25;
+    font-size: clamp(0.58rem, 2.4vw, 0.76rem);
+    line-height: 1.18;
+  }
+
+  #services .mobile-snap .service-card {
+    padding: 0.56rem;
+  }
+
+  #services .service-icon {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 0.46rem;
   }
 
   .card-mark,
@@ -1880,6 +2061,30 @@ textarea:focus {
     gap: 0.35rem;
     min-height: 84px;
     padding-left: 1rem;
+  }
+
+  .choice-panel {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    border-radius: 14px;
+  }
+
+  .choice-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+  }
+
+  .choice-list span {
+    min-height: 0;
+    padding: 0.72rem 0.62rem 0.72rem 2.15rem;
+    font-size: clamp(0.66rem, 2.7vw, 0.82rem);
+    line-height: 1.2;
+  }
+
+  .choice-list span::before {
+    left: 0.62rem;
+    width: 0.88rem;
+    height: 0.88rem;
   }
 
   .meter-row {

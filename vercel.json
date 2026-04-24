@@ -86,6 +86,10 @@
       "destination": "/services/emergency-hvac.html"
     },
     {
+      "source": "/services/duct-installation-cleaning",
+      "destination": "/services/duct-installation-cleaning.html"
+    },
+    {
       "source": "/locations/jacksonville-fl",
       "destination": "/locations/jacksonville-fl.html"
     }

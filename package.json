@@ -1,8 +1,8 @@
 {
-  "name": "always-hvac-site",
+  "name": "always-heating-air-site",
   "version": "1.0.0",
   "private": true,
-  "description": "Static HTML, CSS, and vanilla JavaScript HVAC lead-generation website for Always Heating and Air Conditioning in Jacksonville, FL.",
+  "description": "Static HTML, CSS, and vanilla JavaScript HVAC lead-generation website for Always Heating and Air in Jacksonville, FL.",
   "scripts": {
     "start": "npx serve .",
     "dev": "npx serve ."

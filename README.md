@@ -1,6 +1,6 @@
-# Always Heating and Air Conditioning Static Website
+# Always Heating and Air Static Website
 
-This is a Git-friendly, Vercel-friendly static HTML/CSS website for Always Heating and Air Conditioning, an HVAC company serving Jacksonville, FL.
+This is a Git-friendly, Vercel-friendly static HTML/CSS website for Always Heating and Air, an HVAC company serving Jacksonville, FL.
 
 The site is built for lead generation, local SEO, and fast static deployment. It uses static HTML, CSS, and lightweight vanilla JavaScript for the modal estimate quiz, scroll reveals, video placeholder messaging, and interactive visuals. It does not use React, Tailwind, Bootstrap, or external frontend libraries.
 
@@ -27,6 +27,7 @@ The site is built for lead generation, local SEO, and fast static deployment. It
   /assets
     /images
       hero-homeowners-van.jpg
+      hero-mobile-van.jpeg
       tech-tablet.jpg
   /services
     ac-repair.html
@@ -35,6 +36,7 @@ The site is built for lead generation, local SEO, and fast static deployment. It
     maintenance.html
     diagnostics.html
     emergency-hvac.html
+    duct-installation-cleaning.html
   /locations
     jacksonville-fl.html
   /icons
@@ -79,7 +81,7 @@ Add these environment variables in Vercel before using the form in production:
 ```text
 RESEND_API_KEY=your_resend_api_key
 ESTIMATE_TO_EMAIL=where_leads_should_go@example.com
-ESTIMATE_FROM_EMAIL=Always HVAC <verified-sender@yourdomain.com>
+ESTIMATE_FROM_EMAIL=Always Heating and Air <verified-sender@yourdomain.com>
 ```
 
 `ESTIMATE_FROM_EMAIL` must be a sender verified in Resend. If these variables are missing, the function returns a clear configuration message instead of pretending the lead was captured.
@@ -99,5 +101,5 @@ If using another backend instead of Resend, update the modal form `action` in `i
 
 ## SEO Notes
 
-The site includes unique title tags, meta descriptions, canonical links, Open Graph tags, Twitter card tags, LocalBusiness/HVAC schema, Service schema, FAQ schema, internal links, robots.txt, sitemap.xml, and service-specific pages for Jacksonville HVAC keywords.
+The site includes unique title tags, meta descriptions, canonical links, Open Graph tags, Twitter card tags, LocalBusiness/HVAC schema, Service schema, FAQ schema, internal links, robots.txt, sitemap.xml, and service-specific pages for Jacksonville HVAC keywords, including duct installation and duct cleaning.
 

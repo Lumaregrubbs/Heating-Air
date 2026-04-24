@@ -93,7 +93,7 @@ module.exports = async function handler(req, res) {
 
   const html = `
     <h1>New HVAC Estimate Request</h1>
-    <p>A homeowner submitted the Always Heating and Air Conditioning estimate quiz.</p>
+    <p>A homeowner submitted the Always Heating and Air estimate quiz.</p>
     <table cellpadding="8" cellspacing="0" border="1">
       ${fields.map(([label, value]) => `<tr><th align="left">${escapeHtml(label)}</th><td>${escapeHtml(value || "Not provided")}</td></tr>`).join("")}
     </table>
