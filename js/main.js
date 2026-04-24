@@ -1,4 +1,4 @@
-﻿(function () {
+(function () {
   document.body.classList.add("js-enabled");
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const estimateModal = document.getElementById("estimate-modal");

@@ -1,4 +1,4 @@
-﻿# Always Heating and Air Conditioning Static Website
+# Always Heating and Air Conditioning Static Website
 
 This is a Git-friendly, Vercel-friendly static HTML/CSS website for Always Heating and Air Conditioning, an HVAC company serving Jacksonville, FL.
 

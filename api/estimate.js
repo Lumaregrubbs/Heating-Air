@@ -1,4 +1,4 @@
-﻿const requiredFields = [
+const requiredFields = [
   "systemIssue",
   "systemType",
   "systemAge",
