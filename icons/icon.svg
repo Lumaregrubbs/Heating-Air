@@ -1,9 +1,34 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
-  <title id="title">Always Heating and Air Conditioning Icon</title>
-  <desc id="desc">A simple HVAC-inspired mark with airflow lines and a service dial.</desc>
+  <title id="title">Always Heating and Air Conditioning AC Unit Icon</title>
+  <desc id="desc">A top-down air conditioning unit with a spinning fan inside.</desc>
+  <style>
+    @keyframes fan-spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .fan {
+      transform-origin: 64px 64px;
+      animation: fan-spin 4s linear infinite;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .fan {
+        animation: none;
+      }
+    }
+  </style>
   <rect width="128" height="128" rx="24" fill="#f47c20"/>
-  <circle cx="45" cy="48" r="24" fill="none" stroke="#ffffff" stroke-width="10"/>
-  <circle cx="45" cy="48" r="8" fill="#0e4c92"/>
-  <path d="M76 36h28M76 52h22M76 68h28" stroke="#ffffff" stroke-width="9" stroke-linecap="round"/>
-  <path d="M30 91h68" stroke="#0e4c92" stroke-width="9" stroke-linecap="round"/>
+  <rect x="22" y="22" width="84" height="84" rx="14" fill="#ffffff"/>
+  <rect x="31" y="31" width="66" height="66" rx="10" fill="#102033"/>
+  <path d="M37 40h54M37 88h54M40 37v54M88 37v54" stroke="#1f7ed6" stroke-width="3" stroke-linecap="round" opacity="0.45"/>
+  <circle cx="64" cy="64" r="28" fill="#0e4c92" stroke="#ffffff" stroke-width="4"/>
+  <g class="fan">
+    <path d="M64 39c7 8 8 16 2 23-9-1-15-6-18-16 4-5 9-7 16-7Z" fill="#ffffff"/>
+    <path d="M89 64c-8 7-16 8-23 2 1-9 6-15 16-18 5 4 7 9 7 16Z" fill="#ffffff"/>
+    <path d="M64 89c-7-8-8-16-2-23 9 1 15 6 18 16-4 5-9 7-16 7Z" fill="#ffffff"/>
+    <path d="M39 64c8-7 16-8 23-2-1 9-6 15-16 18-5-4-7-9-7-16Z" fill="#ffffff"/>
+  </g>
+  <circle cx="64" cy="64" r="8" fill="#ffb066" stroke="#ffffff" stroke-width="3"/>
 </svg>

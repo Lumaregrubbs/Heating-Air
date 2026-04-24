@@ -10,13 +10,13 @@
   <meta property="og:description" content="Jacksonville HVAC service done right the first time with honest diagnostics, clear recommendations, and no-pressure service.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.alwaysheatingair.com/">
-  <meta property="og:image" content="https://www.alwaysheatingair.com/icons/icon.svg?v=20260424-layoutfix1">
+  <meta property="og:image" content="https://www.alwaysheatingair.com/icons/icon.svg?v=20260424-quiztight1">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="HVAC Jacksonville FL | Always Heating and Air Conditioning">
   <meta name="twitter:description" content="Request a free preliminary HVAC estimate from Always Heating and Air Conditioning in Jacksonville, FL.">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="icon" href="icons/icon.svg?v=20260424-layoutfix1" type="image/svg+xml">
-  <link rel="stylesheet" href="css/styles.css?v=20260424-layoutfix1">
+  <link rel="icon" href="icons/icon.svg?v=20260424-quiztight1" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css?v=20260424-quiztight1">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -103,7 +103,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="logo" href="index.html" aria-label="Always Heating and Air Conditioning home">
-        <img src="icons/icon.svg?v=20260424-layoutfix1" alt="" width="42" height="42">
+        <img src="icons/icon.svg?v=20260424-quiztight1" alt="" width="42" height="42">
         <span class="logo-full">Always Heating and Air Conditioning</span>
         <span class="logo-short" aria-hidden="true">AlwaysAir</span>
       </a>
@@ -116,7 +116,7 @@
         <a href="locations/jacksonville-fl.html">Jacksonville</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a class="header-cta" href="#estimate" data-estimate-open><span class="cta-full">Get Free Estimate</span><span class="cta-short" aria-hidden="true">Estimate</span></a>
+      <a class="header-cta" href="tel:+19043100857"><span class="cta-full">Call Now</span><span class="cta-short" aria-hidden="true">Call Now</span></a>
     </div>
   </header>
 
@@ -128,24 +128,13 @@
         <div class="hero-copy">
           <p class="eyebrow hero-kicker">HVAC Jacksonville FL</p>
           <h1>Jacksonville HVAC <span>Done Right the First Time</span></h1>
+        </div>
+        <aside class="hero-support-panel reveal">
           <p class="hero-service-line">Done right the first time, so you don't pay for it twice.</p>
           <p class="lead">No guesswork. No pressure. Just honest diagnostics, clear recommendations, and HVAC service built to help you avoid unnecessary costs.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#estimate" data-estimate-open>Get Your Free HVAC Estimate</a>
             <a class="btn btn-secondary" href="#services">See HVAC Services</a>
-          </div>
-        </div>
-        <aside class="hero-action-panel reveal" aria-labelledby="hero-panel-title">
-          <p class="eyebrow" id="hero-panel-title">Need a clear next step?</p>
-          <a class="btn btn-primary btn-large" href="#estimate" data-estimate-open>Free Estimate</a>
-          <a class="hero-phone" href="tel:+19043100857" aria-label="Call Always Heating and Air Conditioning">
-            <span aria-hidden="true">&#9742;</span>
-            <strong>(904) 310-0857</strong>
-          </a>
-          <div class="hero-mini-badges" aria-label="Service highlights">
-            <span>&#10003; Honest Diagnostics</span>
-            <span>&#10003; Repair-First When Appropriate</span>
-            <span>&#9675; No-Pressure Recommendations</span>
           </div>
         </aside>
       </div>
@@ -472,8 +461,8 @@
       <div class="modal-shell">
         <div class="modal-intro">
           <p class="eyebrow">Smart HVAC Estimate Quiz</p>
-          <h2 id="estimate-modal-title">Request a Free Preliminary HVAC Estimate</h2>
-          <p>Answer one question at a time. A professional from Always Heating and Air Conditioning will review your request and follow up with the next best step.</p>
+          <h2 id="estimate-modal-title">Start Your Free HVAC Estimate</h2>
+          <p>Answer a few quick questions and get a clearer next step from Always Heating and Air Conditioning. No pressure, no guessing, just a faster way to start before you spend money.</p>
           <div class="comfort-gauge" aria-hidden="true">
             <span></span>
           </div>
@@ -483,7 +472,7 @@
           <!-- Vercel form handling lives in /api/estimate.js. Configure RESEND_API_KEY, ESTIMATE_TO_EMAIL, and ESTIMATE_FROM_EMAIL in Vercel before using this form in production. -->
           <input type="hidden" name="source" value="Homepage modal quiz">
           <div class="quiz-progress" aria-label="Estimate quiz progress">
-            <span id="quiz-progress-text">Step 1 of 8</span>
+            <span id="quiz-progress-text">Step 1 of 7</span>
             <div class="quiz-progress-track"><span id="quiz-progress-bar"></span></div>
           </div>
 
@@ -550,15 +539,11 @@
           </section>
 
           <section class="quiz-step" data-step hidden>
-            <h3>Additional details</h3>
-            <div class="field">
-              <label for="modal-additional-details">Describe the issue</label>
-              <textarea id="modal-additional-details" name="additionalDetails" rows="5" placeholder="Tell us what you are noticing, when it started, and anything you have already tried."></textarea>
-            </div>
-          </section>
-
-          <section class="quiz-step" data-step hidden>
             <h3>Where should we follow up?</h3>
+            <div class="field">
+              <label for="modal-additional-details">Additional details <span>(optional)</span></label>
+              <textarea id="modal-additional-details" name="additionalDetails" rows="3" placeholder="Tell us what you are noticing, when it started, and anything you have already tried."></textarea>
+            </div>
             <div class="field-grid two">
               <div class="field">
                 <label for="modal-full-name">Full Name *</label>
@@ -598,7 +583,6 @@
           <p class="quiz-error" id="quiz-error" aria-live="polite"></p>
           <div class="quiz-controls">
             <button class="btn btn-secondary" type="button" data-quiz-back>Back</button>
-            <button class="btn btn-primary" type="button" data-quiz-next>Next</button>
             <button class="btn btn-primary" type="submit" data-quiz-submit hidden>Request My Free HVAC Estimate</button>
           </div>
           <p class="form-disclaimer">Online estimates are preliminary only. Final pricing requires an in-person diagnosis by an HVAC professional.</p>
@@ -650,7 +634,7 @@
       </div>
     </div>
   </footer>
-  <script src="js/main.js?v=20260424-layoutfix1" defer></script>
+  <script src="js/main.js?v=20260424-quiztight1" defer></script>
 </body>
 </html>
 

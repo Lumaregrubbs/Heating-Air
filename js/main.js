@@ -77,12 +77,12 @@
   if (estimateForm) {
     const steps = Array.from(estimateForm.querySelectorAll("[data-step]"));
     const backButton = estimateForm.querySelector("[data-quiz-back]");
-    const nextButton = estimateForm.querySelector("[data-quiz-next]");
     const submitButton = estimateForm.querySelector("[data-quiz-submit]");
     const progressText = document.getElementById("quiz-progress-text");
     const progressBar = document.getElementById("quiz-progress-bar");
     const error = document.getElementById("quiz-error");
     let currentStep = 0;
+    let autoAdvanceTimer = null;
 
     function activeFields() {
       return Array.from(steps[currentStep].querySelectorAll("input, textarea, select"));
@@ -115,32 +115,47 @@
       progressText.textContent = `Step ${currentStep + 1} of ${steps.length}`;
       progressBar.style.width = `${progress}%`;
       backButton.disabled = currentStep === 0;
-      nextButton.hidden = currentStep === steps.length - 1;
       submitButton.hidden = currentStep !== steps.length - 1;
-      nextButton.disabled = !stepIsValid();
       error.textContent = "";
     }
 
-    estimateForm.addEventListener("change", updateStep);
-    estimateForm.addEventListener("input", updateStep);
+    function focusStepHeading() {
+      const heading = steps[currentStep].querySelector("h3");
+      if (!heading) return;
+      heading.setAttribute("tabindex", "-1");
+      heading.focus({ preventScroll: true });
+    }
 
-    nextButton.addEventListener("click", () => {
-      if (!stepIsValid()) {
-        error.textContent = "Please answer this step before continuing.";
-        return;
-      }
+    function goToNextStep() {
       currentStep = Math.min(currentStep + 1, steps.length - 1);
       updateStep();
-      const heading = steps[currentStep].querySelector("h3");
-      if (heading) heading.focus?.();
+      focusStepHeading();
+    }
+
+    function scheduleAutoAdvance() {
+      window.clearTimeout(autoAdvanceTimer);
+      if (currentStep >= steps.length - 1 || !stepIsValid()) return;
+      autoAdvanceTimer = window.setTimeout(goToNextStep, 220);
+    }
+
+    estimateForm.addEventListener("change", (event) => {
+      updateStep();
+      if (event.target.matches("input[type='radio']")) {
+        scheduleAutoAdvance();
+      }
     });
 
+    estimateForm.addEventListener("input", updateStep);
+
     backButton.addEventListener("click", () => {
+      window.clearTimeout(autoAdvanceTimer);
       currentStep = Math.max(currentStep - 1, 0);
       updateStep();
+      focusStepHeading();
     });
 
     estimateForm.addEventListener("submit", (event) => {
+      window.clearTimeout(autoAdvanceTimer);
       if (!stepIsValid() || !estimateForm.checkValidity()) {
         event.preventDefault();
         error.textContent = "Please complete the required contact fields before submitting.";
