@@ -1,4 +1,4 @@
-(function () {
+﻿(function () {
   document.body.classList.add("js-enabled");
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const estimateModal = document.getElementById("estimate-modal");
@@ -179,7 +179,7 @@
     document.querySelectorAll("[data-meter]").forEach((element) => element.classList.add("is-active"));
   }
 
-  if (window.location.hash === "#estimate" && estimateModal) {
-    window.setTimeout(() => openDialog(estimateModal), 120);
-  }
+  // Keep #estimate link targets from auto-opening on page load.
+  // The quiz opens only after a visitor clicks an estimate CTA.
 })();
+

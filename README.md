@@ -1,4 +1,4 @@
-# Always Heating and Air Conditioning Static Website
+﻿# Always Heating and Air Conditioning Static Website
 
 This is a Git-friendly, Vercel-friendly static HTML/CSS website for Always Heating and Air Conditioning, an HVAC company serving Jacksonville, FL.
 
@@ -88,7 +88,7 @@ ESTIMATE_FROM_EMAIL=Always HVAC <verified-sender@yourdomain.com>
 
 Current placeholder contact details are:
 
-- Phone: `(904) XXX-XXXX`
+- Phone: `(904) 310-0857`
 - Email: `service@example.com`
 - Address: `Jacksonville, FL`
 - Website: `https://www.alwaysheatingair.com`
@@ -100,3 +100,4 @@ If using another backend instead of Resend, update the modal form `action` in `i
 ## SEO Notes
 
 The site includes unique title tags, meta descriptions, canonical links, Open Graph tags, Twitter card tags, LocalBusiness/HVAC schema, Service schema, FAQ schema, internal links, robots.txt, sitemap.xml, and service-specific pages for Jacksonville HVAC keywords.
+

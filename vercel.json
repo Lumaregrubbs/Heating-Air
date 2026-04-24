@@ -1,4 +1,4 @@
-{
+﻿{
   "cleanUrls": false,
   "trailingSlash": false,
   "headers": [
@@ -46,3 +46,4 @@
     { "source": "/locations/jacksonville-fl", "destination": "/locations/jacksonville-fl.html" }
   ]
 }
+

@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --navy: #0e4c92;
   --navy-2: #102033;
   --blue: #1f7ed6;
@@ -203,6 +203,11 @@ ol {
   line-height: 1.1;
 }
 
+.logo-short,
+.cta-short {
+  display: none;
+}
+
 .logo img {
   width: 42px;
   height: 42px;
@@ -320,10 +325,14 @@ ol {
   padding-bottom: calc(var(--space) + 4.5rem);
   display: flex;
   align-items: center;
-  background:
+  background-color: #07192f;
+  background-image:
     linear-gradient(90deg, rgba(4, 10, 18, 0.9) 0%, rgba(9, 20, 35, 0.82) 38%, rgba(9, 21, 36, 0.56) 64%, rgba(8, 18, 30, 0.28) 100%),
     linear-gradient(180deg, rgba(5, 11, 20, 0.34), rgba(5, 10, 16, 0.82)),
-    url("../assets/images/hero-homeowners-van.jpg") center / cover no-repeat;
+    url("../assets/images/hero-homeowners-van.jpg");
+  background-position: center top, center top, center top;
+  background-size: 100% 100%, 100% 100%, 100% auto;
+  background-repeat: no-repeat;
 }
 
 .hero::before {
@@ -1568,23 +1577,72 @@ textarea:focus {
     padding-top: 0.55rem;
   }
 
+  .site-header .container {
+    width: min(100% - 0.75rem, var(--container));
+  }
+
   .nav-button {
     display: inline-flex;
+    min-height: 42px;
+    padding: 0.55rem 0.62rem;
+    font-size: 0.82rem;
   }
 
   .header-inner {
-    flex-wrap: wrap;
-    padding-block: 0.72rem;
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    min-height: 58px;
+    gap: 0.45rem;
+    padding: 0.45rem;
     border-radius: 14px;
   }
 
+  .logo {
+    min-width: 0;
+    gap: 0.45rem;
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
+
+  .logo span {
+    display: none;
+  }
+
+  .logo::after {
+    content: "AlwaysAir";
+    color: var(--white);
+    font-size: 0.95rem;
+    font-weight: 950;
+  }
+
+  .logo img {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+  }
+
+  .logo-full,
+  .logo-short {
+    display: inline;
+  }
+
   .main-nav {
-    width: 100%;
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 0;
+    right: 0;
+    width: auto;
     display: none;
     flex-direction: column;
     align-items: stretch;
-    padding-top: 0.8rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    gap: 0;
+    padding: 0.65rem 0.85rem;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 14px;
+    background: rgba(16, 32, 51, 0.96);
+    box-shadow: 0 20px 46px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(18px);
   }
 
   .main-nav a {
@@ -1596,7 +1654,24 @@ textarea:focus {
   }
 
   .header-cta {
-    width: 100%;
+    width: auto;
+    min-height: 42px;
+    padding: 0.55rem 0.72rem;
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+
+  .header-cta {
+    font-size: 0;
+  }
+
+  .header-cta span {
+    display: none;
+  }
+
+  .header-cta::before {
+    content: "Estimate";
+    font-size: 0.82rem;
   }
 
   .hero-actions,
@@ -1612,19 +1687,37 @@ textarea:focus {
   }
 
   .hero {
+    display: block;
     min-height: auto;
-    padding-top: 9.5rem;
-    padding-bottom: 8rem;
-    background-position: 64% center;
+    padding-top: calc(56.25vw + 6.25rem);
+    padding-bottom: 7.5rem;
+    background-color: #07192f;
+    background-image:
+      linear-gradient(180deg, rgba(5, 11, 20, 0.18) 0, rgba(5, 11, 20, 0.2) 44vw, rgba(7, 25, 47, 0.96) 59vw, #07192f 100%),
+      url("../assets/images/hero-homeowners-van.jpg");
+    background-position: top center, top center;
+    background-size: 100% 100%, 100% auto;
+    background-repeat: no-repeat;
   }
 
   .hero h1 {
-    font-size: clamp(2.85rem, 14vw, 4.5rem);
+    max-width: 100%;
+    font-size: clamp(2.25rem, 10.8vw, 3.55rem);
+    line-height: 1.02;
+  }
+
+  .hero .lead {
+    font-size: 1rem;
+  }
+
+  .hero-service-line {
+    font-size: 1.06rem;
   }
 
   .hero-action-panel {
     width: 100%;
     justify-self: stretch;
+    margin-top: 1.3rem;
   }
 
   .hero-mini-badges {
@@ -1757,3 +1850,4 @@ textarea:focus {
     transform: none;
   }
 }
+
