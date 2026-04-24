@@ -1679,6 +1679,11 @@ textarea:focus {
     width: 100%;
   }
 
+  .hero-actions .btn {
+    min-height: 54px;
+    white-space: normal;
+  }
+
   .hero-card {
     aspect-ratio: 3 / 4;
     display: flex;
@@ -1689,12 +1694,12 @@ textarea:focus {
   .hero {
     display: block;
     min-height: auto;
-    padding-top: calc(56.25vw + 6.25rem);
+    padding-top: calc(133.93vw + 5.75rem);
     padding-bottom: 7.5rem;
     background-color: #07192f;
     background-image:
-      linear-gradient(180deg, rgba(5, 11, 20, 0.18) 0, rgba(5, 11, 20, 0.2) 44vw, rgba(7, 25, 47, 0.96) 59vw, #07192f 100%),
-      url("../assets/images/hero-homeowners-van.jpg");
+      linear-gradient(180deg, rgba(5, 11, 20, 0.08) 0, rgba(5, 11, 20, 0.12) 96vw, rgba(7, 25, 47, 0.94) 136vw, #07192f 100%),
+      url("../assets/images/hero-mobile-van.jpeg");
     background-position: top center, top center;
     background-size: 100% 100%, 100% auto;
     background-repeat: no-repeat;
@@ -1702,16 +1707,27 @@ textarea:focus {
 
   .hero h1 {
     max-width: 100%;
-    font-size: clamp(2.25rem, 10.8vw, 3.55rem);
-    line-height: 1.02;
+    font-size: clamp(2rem, 9.4vw, 3rem);
+    line-height: 1.04;
+  }
+
+  .hero h1 span {
+    display: inline;
   }
 
   .hero .lead {
+    max-width: 100%;
     font-size: 1rem;
   }
 
   .hero-service-line {
+    max-width: 100%;
     font-size: 1.06rem;
+  }
+
+  .hero-copy {
+    width: 100%;
+    min-width: 0;
   }
 
   .hero-action-panel {
