@@ -4,13 +4,14 @@
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#0a2442",
+  "theme_color": "#0e4c92",
   "icons": [
     {
-      "src": "/icons/icon.svg",
+      "src": "/icons/icon.svg?v=20260424-hero3",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"
     }
   ]
 }
+

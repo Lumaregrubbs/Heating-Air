@@ -165,21 +165,32 @@ ol {
 }
 
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 20;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
-  background: rgba(16, 32, 51, 0.82);
-  box-shadow: 0 18px 34px rgba(7, 25, 47, 0.16);
-  backdrop-filter: blur(16px);
+  padding-top: 1rem;
+  border-bottom: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
 }
 
 .header-inner {
-  min-height: 76px;
+  min-height: 74px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  padding: 0.82rem 1.05rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  background:
+    linear-gradient(90deg, rgba(16, 32, 51, 0.94), rgba(16, 32, 51, 0.74)),
+    rgba(16, 32, 51, 0.84);
+  box-shadow: 0 18px 54px rgba(0, 0, 0, 0.32);
+  backdrop-filter: blur(18px);
 }
 
 .logo {
@@ -196,6 +207,8 @@ ol {
   width: 42px;
   height: 42px;
   flex: 0 0 auto;
+  border-radius: 10px;
+  background: var(--orange);
 }
 
 .nav-toggle {
@@ -302,22 +315,37 @@ ol {
   position: relative;
   overflow: hidden;
   min-height: 100vh;
-  margin-top: -76px;
-  padding-top: calc(var(--space) + 76px);
+  margin-top: 0;
+  padding-top: calc(var(--space) + 7.5rem);
+  padding-bottom: calc(var(--space) + 4.5rem);
   display: flex;
   align-items: center;
   background:
-    linear-gradient(110deg, rgba(16, 32, 51, 0.86) 0%, rgba(14, 76, 146, 0.76) 48%, rgba(244, 124, 32, 0.2) 100%),
-    linear-gradient(180deg, rgba(14, 76, 146, 0.48), rgba(16, 32, 51, 0.88)),
+    linear-gradient(90deg, rgba(4, 10, 18, 0.9) 0%, rgba(9, 20, 35, 0.82) 38%, rgba(9, 21, 36, 0.56) 64%, rgba(8, 18, 30, 0.28) 100%),
+    linear-gradient(180deg, rgba(5, 11, 20, 0.34), rgba(5, 10, 16, 0.82)),
     url("../assets/images/hero-homeowners-van.jpg") center / cover no-repeat;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+  background-size: 42px 42px;
+  opacity: 0.42;
+  pointer-events: none;
 }
 
 .hero::after {
   content: "";
   position: absolute;
-  inset: auto 0 0;
-  height: 34%;
-  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.96));
+  inset: auto 10% 8rem auto;
+  width: min(35vw, 520px);
+  height: min(35vw, 520px);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(244, 124, 32, 0.22), transparent 62%);
   pointer-events: none;
 }
 
@@ -344,8 +372,48 @@ ol {
   gap: clamp(2rem, 5vw, 4.25rem);
 }
 
+.hero .hero-grid {
+  grid-template-columns: minmax(0, 1.22fr) minmax(320px, 0.78fr);
+}
+
 .hero-copy .lead {
-  max-width: 690px;
+  max-width: 650px;
+}
+
+.hero h1 {
+  max-width: 840px;
+  color: var(--white);
+  font-size: clamp(3.2rem, 8vw, 6.9rem);
+  font-weight: 950;
+  line-height: 0.96;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.46);
+}
+
+.hero h1 span {
+  display: block;
+  color: var(--orange);
+}
+
+.hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 0.42rem 0.72rem;
+  border: 1px solid rgba(244, 124, 32, 0.52);
+  border-radius: 8px;
+  color: var(--orange-2);
+  background: rgba(244, 124, 32, 0.12);
+  box-shadow: 0 0 28px rgba(244, 124, 32, 0.12);
+}
+
+.hero-service-line {
+  max-width: 700px;
+  padding-left: 0.95rem;
+  border-left: 4px solid var(--orange);
+  color: rgba(255, 255, 255, 0.94);
+  font-size: clamp(1.18rem, 2vw, 1.52rem);
+  font-weight: 900;
+  line-height: 1.25;
 }
 
 .hero-actions {
@@ -353,6 +421,20 @@ ol {
   flex-wrap: wrap;
   gap: 0.8rem;
   margin: 1.8rem 0;
+}
+
+.hero .btn-secondary {
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+}
+
+.hero .btn-secondary:hover,
+.hero .btn-secondary:focus {
+  color: var(--orange-2);
+  border-color: rgba(255, 176, 102, 0.7);
+  background: rgba(16, 32, 51, 0.42);
 }
 
 .center-actions {
@@ -377,6 +459,107 @@ ol {
   backdrop-filter: blur(10px);
   font-size: 0.9rem;
   font-weight: 800;
+}
+
+.hero-action-panel {
+  display: grid;
+  gap: 1rem;
+  align-self: center;
+  justify-self: end;
+  width: min(100%, 520px);
+  padding: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(16, 32, 51, 0.72), rgba(16, 32, 51, 0.38));
+  box-shadow: 0 22px 58px rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(18px);
+}
+
+.hero-action-panel .eyebrow {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.btn-large {
+  min-height: 64px;
+  font-size: 1.13rem;
+}
+
+.hero-phone {
+  min-height: 64px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.95rem 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: var(--radius);
+  color: var(--white);
+  background: linear-gradient(135deg, rgba(31, 126, 214, 0.72), rgba(16, 32, 51, 0.66));
+  font-size: 1.13rem;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.18);
+}
+
+.hero-phone span {
+  color: var(--orange-2);
+  font-size: 1.2rem;
+}
+
+.hero-mini-badges {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: rgba(0, 0, 0, 0.26);
+}
+
+.hero-mini-badges span {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem;
+  color: var(--white);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.hero-mini-badges span:first-child,
+.hero-mini-badges span:nth-child(2) {
+  color: #ffffff;
+}
+
+.hero-mini-badges span:last-child {
+  color: var(--orange-2);
+}
+
+.hero-integrity-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1rem, 7vw, 7rem);
+  padding: 0.9rem 1rem;
+  color: var(--white);
+  background: var(--orange);
+  font-weight: 950;
+}
+
+.hero-integrity-bar span {
+  position: relative;
+  padding-left: 1.8rem;
+}
+
+.hero-integrity-bar span::before {
+  content: "\25C7";
+  position: absolute;
+  left: 0;
+  color: var(--white);
 }
 
 .hero-card,
@@ -427,7 +610,7 @@ ol {
 
 .airflow {
   position: absolute;
-  z-index: 0;
+  z-index: 1;
   width: 210px;
   height: 1px;
   border-radius: 999px;
@@ -1279,6 +1462,7 @@ textarea:focus {
 }
 
 .page-hero {
+  padding-top: calc(var(--space) + 6rem);
   background:
     radial-gradient(circle at 80% 10%, rgba(74, 167, 223, 0.17), transparent 28%),
     linear-gradient(180deg, #f8fcff, #ffffff);
@@ -1380,13 +1564,18 @@ textarea:focus {
 }
 
 @media (max-width: 767px) {
+  .site-header {
+    padding-top: 0.55rem;
+  }
+
   .nav-button {
     display: inline-flex;
   }
 
   .header-inner {
     flex-wrap: wrap;
-    padding-block: 0.75rem;
+    padding-block: 0.72rem;
+    border-radius: 14px;
   }
 
   .main-nav {
@@ -1395,7 +1584,7 @@ textarea:focus {
     flex-direction: column;
     align-items: stretch;
     padding-top: 0.8rem;
-    border-top: 1px solid var(--line);
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
   }
 
   .main-nav a {
@@ -1424,7 +1613,30 @@ textarea:focus {
 
   .hero {
     min-height: auto;
-    background-position: 58% center;
+    padding-top: 9.5rem;
+    padding-bottom: 8rem;
+    background-position: 64% center;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.85rem, 14vw, 4.5rem);
+  }
+
+  .hero-action-panel {
+    width: 100%;
+    justify-self: stretch;
+  }
+
+  .hero-mini-badges {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-integrity-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+    min-height: 84px;
+    padding-left: 1rem;
   }
 
   .meter-row {
