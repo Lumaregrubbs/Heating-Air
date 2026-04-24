@@ -24,6 +24,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -1692,27 +1693,39 @@ textarea:focus {
   }
 
   .hero {
-    display: block;
-    min-height: auto;
-    padding-top: calc(133.93vw + 5.75rem);
-    padding-bottom: 7.5rem;
+    display: flex;
+    min-height: 100svh;
+    padding-top: 7rem;
+    padding-bottom: 6.25rem;
     background-color: #07192f;
     background-image:
-      linear-gradient(180deg, rgba(5, 11, 20, 0.08) 0, rgba(5, 11, 20, 0.12) 96vw, rgba(7, 25, 47, 0.94) 136vw, #07192f 100%),
+      linear-gradient(180deg, rgba(5, 11, 20, 0.38) 0%, rgba(5, 11, 20, 0.5) 38%, rgba(7, 25, 47, 0.9) 100%),
       url("../assets/images/hero-mobile-van.jpeg");
-    background-position: top center, top center;
-    background-size: 100% 100%, 100% auto;
+    background-position: center, center;
+    background-size: cover, cover;
     background-repeat: no-repeat;
+  }
+
+  .hero .container {
+    width: min(100% - 2rem, var(--container));
+  }
+
+  .hero .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-content: center;
+    gap: 1.15rem;
+    width: 100%;
   }
 
   .hero h1 {
     max-width: 100%;
-    font-size: clamp(2rem, 9.4vw, 3rem);
-    line-height: 1.04;
+    font-size: clamp(2.25rem, 10.5vw, 3.35rem);
+    line-height: 1.02;
   }
 
   .hero h1 span {
-    display: inline;
+    display: block;
   }
 
   .hero .lead {
@@ -1734,6 +1747,7 @@ textarea:focus {
     width: 100%;
     justify-self: stretch;
     margin-top: 1.3rem;
+    padding: 1rem;
   }
 
   .hero-mini-badges {
