@@ -240,11 +240,20 @@ ol {
   color: rgba(255, 255, 255, 0.9);
   font-size: 0.94rem;
   font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .main-nav a:hover,
 .main-nav a:focus {
   color: var(--orange-2);
+}
+
+.header-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex: 0 0 auto;
 }
 
 .btn,
@@ -259,8 +268,10 @@ ol {
   border: 2px solid transparent;
   border-radius: var(--radius);
   font-weight: 900;
+  letter-spacing: 0.03em;
   line-height: 1.15;
   text-align: center;
+  text-transform: uppercase;
   cursor: pointer;
   transition: transform 180ms ease, background 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
@@ -278,25 +289,42 @@ ol {
 }
 
 .btn-primary,
-.header-cta {
+.header-estimate {
   color: var(--white);
   background: var(--orange);
   box-shadow: 0 12px 24px rgba(244, 124, 32, 0.28);
 }
 
+.header-call {
+  color: var(--white);
+  background: var(--blue);
+  box-shadow: 0 12px 24px rgba(31, 126, 214, 0.26);
+}
+
+.header-call::after {
+  display: none;
+}
+
 .btn-primary:hover,
 .btn-primary:focus,
-.header-cta:hover,
-.header-cta:focus {
+.header-estimate:hover,
+.header-estimate:focus {
   background: #d96513;
   transform: translateY(-2px);
   box-shadow: 0 18px 34px rgba(244, 124, 32, 0.35);
 }
 
+.header-call:hover,
+.header-call:focus {
+  background: #1566b1;
+  transform: translateY(-2px);
+  box-shadow: 0 18px 34px rgba(31, 126, 214, 0.34);
+}
+
 .btn:hover::after,
 .btn:focus::after,
-.header-cta:hover::after,
-.header-cta:focus::after {
+.header-estimate:hover::after,
+.header-estimate:focus::after {
   transform: translateX(4px) rotate(45deg);
 }
 
@@ -384,6 +412,8 @@ ol {
 
 .hero .hero-grid {
   grid-template-columns: minmax(0, 1.22fr) minmax(320px, 0.78fr);
+  min-height: min(68vh, 660px);
+  align-items: end;
 }
 
 .hero-copy .lead {
@@ -396,6 +426,8 @@ ol {
   font-size: clamp(3.2rem, 8vw, 6.9rem);
   font-weight: 950;
   line-height: 0.96;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
   text-shadow: 0 10px 30px rgba(0, 0, 0, 0.46);
 }
 
@@ -423,7 +455,9 @@ ol {
   color: rgba(255, 255, 255, 0.94);
   font-size: clamp(1.18rem, 2vw, 1.52rem);
   font-weight: 900;
+  letter-spacing: 0.035em;
   line-height: 1.25;
+  text-transform: uppercase;
 }
 
 .hero-actions {
@@ -474,7 +508,7 @@ ol {
 .hero-support-panel {
   display: grid;
   gap: 1rem;
-  align-self: center;
+  align-self: end;
   justify-self: end;
   width: min(100%, 520px);
   padding: clamp(1.1rem, 3vw, 1.65rem);
@@ -1672,35 +1706,23 @@ textarea:focus {
     display: flex;
   }
 
+  .header-actions {
+    gap: 0.35rem;
+  }
+
   .header-cta {
     width: auto;
     min-height: 42px;
-    padding: 0.55rem 0.72rem;
-    font-size: 0.82rem;
+    padding: 0.48rem 0.58rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.02em;
     white-space: nowrap;
   }
 
-  .header-cta {
-    font-size: 0;
-  }
-
-  .header-cta span {
-    display: none;
-  }
-
-  .header-cta::before {
-    content: "Call Now";
-    font-size: 0.82rem;
-  }
-
-  .hero-actions,
-  .hero-actions .btn {
-    width: 100%;
-  }
-
-  .hero-actions .btn {
-    min-height: 54px;
-    white-space: normal;
+  .header-estimate::after {
+    width: 0.42rem;
+    height: 0.42rem;
+    margin-left: 0.38rem;
   }
 
   .hero-card {
@@ -1731,9 +1753,10 @@ textarea:focus {
   .hero .hero-grid {
     display: grid;
     grid-template-columns: 1fr;
-    align-content: center;
+    align-content: space-between;
     gap: 1.15rem;
     width: 100%;
+    min-height: calc(100svh - 14rem);
   }
 
   .hero h1 {
@@ -1764,8 +1787,9 @@ textarea:focus {
   .hero-support-panel {
     width: 100%;
     justify-self: stretch;
-    margin-top: 1.3rem;
-    padding: 1rem;
+    align-self: end;
+    margin-top: auto;
+    padding: 0.95rem;
   }
 
   .mobile-snap {
