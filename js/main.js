@@ -1,4 +1,5 @@
 (function () {
+  document.body.classList.add("js-enabled");
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const estimateModal = document.getElementById("estimate-modal");
   const estimateForm = document.getElementById("estimate-quiz-form");
@@ -29,10 +30,11 @@
     return event.target.closest(selector);
   }
 
-  document.querySelectorAll("[data-estimate-open], a[href='#estimate'], a[href='/#estimate']").forEach((trigger) => {
+  document.querySelectorAll("[data-estimate-open], a[href='#estimate'], a[href='/#estimate'], a[href$='index.html#estimate']").forEach((trigger) => {
     trigger.addEventListener("click", (event) => {
       if (!estimateModal) return;
       event.preventDefault();
+      if (videoMessage && !videoMessage.hidden) closeDialog(videoMessage);
       openDialog(estimateModal, trigger);
     });
   });
