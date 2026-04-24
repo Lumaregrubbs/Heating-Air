@@ -1,49 +1,93 @@
-﻿{
+{
   "cleanUrls": false,
   "trailingSlash": false,
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        }
       ]
     },
     {
       "source": "/css/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
       ]
     },
     {
       "source": "/js/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
       ]
     },
     {
       "source": "/icons/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/assets/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     }
   ],
   "rewrites": [
-    { "source": "/services/ac-repair", "destination": "/services/ac-repair.html" },
-    { "source": "/services/ac-installation", "destination": "/services/ac-installation.html" },
-    { "source": "/services/heating-services", "destination": "/services/heating-services.html" },
-    { "source": "/services/maintenance", "destination": "/services/maintenance.html" },
-    { "source": "/services/diagnostics", "destination": "/services/diagnostics.html" },
-    { "source": "/services/emergency-hvac", "destination": "/services/emergency-hvac.html" },
-    { "source": "/locations/jacksonville-fl", "destination": "/locations/jacksonville-fl.html" }
+    {
+      "source": "/services/ac-repair",
+      "destination": "/services/ac-repair.html"
+    },
+    {
+      "source": "/services/ac-installation",
+      "destination": "/services/ac-installation.html"
+    },
+    {
+      "source": "/services/heating-services",
+      "destination": "/services/heating-services.html"
+    },
+    {
+      "source": "/services/maintenance",
+      "destination": "/services/maintenance.html"
+    },
+    {
+      "source": "/services/diagnostics",
+      "destination": "/services/diagnostics.html"
+    },
+    {
+      "source": "/services/emergency-hvac",
+      "destination": "/services/emergency-hvac.html"
+    },
+    {
+      "source": "/locations/jacksonville-fl",
+      "destination": "/locations/jacksonville-fl.html"
+    }
   ]
 }
-
