@@ -695,6 +695,7 @@ ol {
 }
 
 .hero-support-panel {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(220px, 0.9fr) minmax(260px, 1fr) minmax(340px, 1.15fr);
   align-items: center;
@@ -702,12 +703,62 @@ ol {
   align-self: end;
   justify-self: center;
   width: min(100%, 1060px);
-  padding: clamp(1rem, 2vw, 1.25rem);
+  padding: clamp(1.55rem, 2.6vw, 1.95rem) clamp(1rem, 2vw, 1.25rem) clamp(1rem, 2vw, 1.25rem);
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 18px;
   background: linear-gradient(135deg, rgba(16, 32, 51, 0.72), rgba(16, 32, 51, 0.38));
   box-shadow: 0 22px 58px rgba(0, 0, 0, 0.24);
   backdrop-filter: blur(18px);
+}
+
+.hero-awards {
+  position: absolute;
+  top: 0;
+  left: clamp(0.9rem, 2.2vw, 1.7rem);
+  z-index: 3;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  transform: translateY(-52%);
+}
+
+.hero-awards span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.42rem;
+  min-height: 36px;
+  padding: 0.48rem 0.72rem;
+  border: 1px solid rgba(255, 215, 106, 0.72);
+  border-radius: 999px;
+  color: #fff8dc;
+  background:
+    linear-gradient(135deg, rgba(255, 214, 102, 0.18), rgba(244, 124, 32, 0.1)),
+    linear-gradient(135deg, rgba(103, 69, 16, 0.96), rgba(151, 90, 22, 0.88));
+  box-shadow:
+    0 14px 32px rgba(0, 0, 0, 0.2),
+    0 0 22px rgba(255, 176, 102, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28);
+  font-size: 0.68rem;
+  font-weight: 950;
+  letter-spacing: 0.075em;
+  line-height: 1.1;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.hero-awards strong {
+  color: #ffd76a;
+  font-size: 1rem;
+  line-height: 1;
+  text-shadow:
+    0 0 10px rgba(255, 215, 106, 0.86),
+    0 0 18px rgba(244, 124, 32, 0.54);
+}
+
+.hero-awards em {
+  color: rgba(255, 255, 255, 0.82);
+  font-style: normal;
 }
 
 .hero-support-panel .lead {
@@ -2078,11 +2129,13 @@ textarea:focus {
   }
 
   .logo span {
-    display: none;
+    display: inline;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .logo::after {
-    content: "AlwaysAir";
+    content: none;
     color: var(--white);
     font-size: 0.78rem;
     font-weight: 950;
@@ -2094,8 +2147,7 @@ textarea:focus {
     border-radius: 8px;
   }
 
-  .logo-full,
-  .logo-short {
+  .logo .logo-short {
     display: none;
   }
 
@@ -2221,10 +2273,33 @@ textarea:focus {
     grid-template-columns: 1fr;
     width: 100%;
     margin-top: clamp(14rem, 30svh, 18rem);
-    padding: 1rem;
+    padding: 2.55rem 0.9rem 1rem;
     border-radius: 18px;
     background: linear-gradient(135deg, rgba(16, 32, 51, 0.82), rgba(16, 32, 51, 0.58));
     backdrop-filter: blur(16px);
+  }
+
+  .hero-awards {
+    left: 0.7rem;
+    right: 0.7rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.38rem;
+    transform: translateY(-48%);
+  }
+
+  .hero-awards span {
+    min-height: 30px;
+    padding: 0.34rem 0.5rem;
+    font-size: 0.55rem;
+    letter-spacing: 0.055em;
+    line-height: 1.14;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .hero-awards strong {
+    font-size: 0.86rem;
   }
 
   .hero-kicker,
