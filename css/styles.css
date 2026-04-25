@@ -2044,22 +2044,7 @@ textarea:focus {
   }
 
   .header-actions {
-    gap: 0.35rem;
-  }
-
-  .header-cta {
-    width: auto;
-    min-height: 42px;
-    padding: 0.48rem 0.58rem;
-    font-size: 0.68rem;
-    letter-spacing: 0.02em;
-    white-space: nowrap;
-  }
-
-  .header-estimate::after {
-    width: 0.42rem;
-    height: 0.42rem;
-    margin-left: 0.38rem;
+    display: none;
   }
 
   .hero-card {
@@ -2072,11 +2057,11 @@ textarea:focus {
   .hero {
     display: flex;
     min-height: 100svh;
-    padding-top: 7rem;
-    padding-bottom: 6.25rem;
+    padding-top: 6.2rem;
+    padding-bottom: 4.4rem;
     background-color: #07192f;
     background-image:
-      linear-gradient(180deg, rgba(5, 11, 20, 0.38) 0%, rgba(5, 11, 20, 0.5) 38%, rgba(7, 25, 47, 0.9) 100%),
+      linear-gradient(180deg, rgba(5, 11, 20, 0.66) 0%, rgba(5, 11, 20, 0.46) 24%, rgba(5, 11, 20, 0.08) 43%, rgba(5, 11, 20, 0.04) 70%, rgba(7, 25, 47, 0.84) 100%),
       url("../assets/images/phone-hero-bg-20260425-v2.jpg");
     background-position: center, center top;
     background-size: cover, cover;
@@ -2088,17 +2073,14 @@ textarea:focus {
   }
 
   .hero .hero-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    align-content: space-between;
-    gap: 1.15rem;
+    display: block;
     width: 100%;
-    min-height: calc(100svh - 14rem);
+    min-height: calc(100svh - 10.6rem);
   }
 
   .hero h1 {
-    max-width: 100%;
-    font-size: clamp(2.25rem, 10.5vw, 3.35rem);
+    max-width: min(100%, 350px);
+    font-size: clamp(2rem, 9.2vw, 3rem);
     line-height: 1.02;
   }
 
@@ -2119,14 +2101,11 @@ textarea:focus {
   .hero-copy {
     width: 100%;
     min-width: 0;
+    padding-top: 0.25rem;
   }
 
   .hero-support-panel {
-    width: 100%;
-    justify-self: stretch;
-    align-self: end;
-    margin-top: auto;
-    padding: 0.95rem;
+    display: none;
   }
 
   .mobile-snap {
@@ -2222,10 +2201,17 @@ textarea:focus {
   }
 
   .hero-integrity-bar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.35rem;
-    min-height: 84px;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.28rem 0.85rem;
+    min-height: 0;
+    padding: 0.52rem 1rem;
+    font-size: 0.68rem;
+    line-height: 1.15;
+  }
+
+  .hero-integrity-bar span {
     padding-left: 1rem;
   }
 
