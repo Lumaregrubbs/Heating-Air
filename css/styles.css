@@ -496,8 +496,8 @@ ol {
   align-items: center;
   background-color: #07192f;
   background-image:
-    linear-gradient(90deg, rgba(4, 10, 18, 0.9) 0%, rgba(9, 20, 35, 0.82) 38%, rgba(9, 21, 36, 0.56) 64%, rgba(8, 18, 30, 0.28) 100%),
-    linear-gradient(180deg, rgba(5, 11, 20, 0.34), rgba(5, 10, 16, 0.82)),
+    linear-gradient(90deg, rgba(4, 10, 18, 0.54) 0%, rgba(9, 20, 35, 0.5) 34%, rgba(9, 21, 36, 0.38) 64%, rgba(8, 18, 30, 0.2) 100%),
+    linear-gradient(180deg, rgba(5, 11, 20, 0.14), rgba(5, 10, 16, 0.54)),
     url("../assets/images/desktop-hero-bg-20260425-v2.jpg");
   background-position: center top, center top, center center;
   background-size: 100% 100%, 100% 100%, cover;
@@ -517,14 +517,7 @@ ol {
 }
 
 .hero::after {
-  content: "";
-  position: absolute;
-  inset: auto 10% 8rem auto;
-  width: min(35vw, 520px);
-  height: min(35vw, 520px);
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(244, 124, 32, 0.22), transparent 62%);
-  pointer-events: none;
+  content: none;
 }
 
 .hero .container {
@@ -551,10 +544,11 @@ ol {
 }
 
 .hero .hero-grid {
-  grid-template-columns: minmax(0, 0.92fr) minmax(340px, 0.5fr);
+  grid-template-columns: 1fr;
   min-height: min(72vh, 700px);
-  align-items: end;
-  gap: clamp(2rem, 4vw, 3.5rem);
+  align-content: end;
+  justify-items: center;
+  gap: clamp(1.1rem, 2.4vw, 1.8rem);
 }
 
 .hero-copy .lead {
@@ -562,20 +556,21 @@ ol {
 }
 
 .hero-copy {
-  max-width: 760px;
-  text-align: left;
+  width: 100%;
+  max-width: 1120px;
+  text-align: center;
 }
 
 .hero h1 {
-  max-width: 760px;
-  margin-inline: 0;
+  max-width: 1120px;
+  margin-inline: auto;
   color: var(--white);
-  font-size: clamp(2.75rem, 4vw, 4.25rem);
+  font-size: clamp(3.4rem, 5.55vw, 6.1rem);
   font-weight: 950;
   line-height: 0.98;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  text-align: left;
+  text-align: center;
   text-shadow: 0 10px 30px rgba(0, 0, 0, 0.46);
 }
 
@@ -595,9 +590,16 @@ ol {
 .hero-title-sub {
   margin-top: 0.18em;
   color: var(--orange);
-  font-size: 0.52em;
+  font-size: 0.36em;
   line-height: 1.04;
   letter-spacing: 0.045em;
+}
+
+.always-glow {
+  color: var(--orange-2);
+  text-shadow:
+    0 0 10px rgba(255, 176, 102, 0.65),
+    0 0 22px rgba(244, 124, 32, 0.42);
 }
 
 .hero-kicker {
@@ -621,7 +623,7 @@ ol {
 
 .hero-local-line {
   width: fit-content;
-  margin: 0 0 0.9rem;
+  margin: 0 auto 0.9rem;
   padding: 0.42rem 0.75rem;
   border: 1px solid rgba(255, 255, 255, 0.24);
   border-radius: 8px;
@@ -694,11 +696,13 @@ ol {
 
 .hero-support-panel {
   display: grid;
-  gap: 0.85rem;
+  grid-template-columns: minmax(220px, 0.9fr) minmax(260px, 1fr) minmax(340px, 1.15fr);
+  align-items: center;
+  gap: clamp(1rem, 2vw, 1.6rem);
   align-self: end;
-  justify-self: end;
-  width: min(100%, 400px);
-  padding: clamp(1rem, 2vw, 1.35rem);
+  justify-self: center;
+  width: min(100%, 1060px);
+  padding: clamp(1rem, 2vw, 1.25rem);
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 18px;
   background: linear-gradient(135deg, rgba(16, 32, 51, 0.72), rgba(16, 32, 51, 0.38));
@@ -877,14 +881,7 @@ ol {
 }
 
 .airflow {
-  position: absolute;
-  z-index: 1;
-  width: 210px;
-  height: 1px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, transparent, rgba(255, 176, 102, 0.85), transparent);
-  opacity: 0.72;
-  animation: drift 7s ease-in-out infinite;
+  display: none;
 }
 
 .airflow-one {
@@ -2196,9 +2193,10 @@ textarea:focus {
 
   .hero-title-sub {
     margin-top: 0.34rem;
-    font-size: 0.58em;
+    font-size: 0.43em;
     line-height: 1.08;
-    white-space: nowrap;
+    letter-spacing: 0.025em;
+    white-space: normal;
   }
 
   .hero .lead {
@@ -2220,8 +2218,9 @@ textarea:focus {
 
   .hero-support-panel {
     display: grid;
+    grid-template-columns: 1fr;
     width: 100%;
-    margin-top: clamp(21rem, 48svh, 27rem);
+    margin-top: clamp(14rem, 30svh, 18rem);
     padding: 1rem;
     border-radius: 18px;
     background: linear-gradient(135deg, rgba(16, 32, 51, 0.82), rgba(16, 32, 51, 0.58));
