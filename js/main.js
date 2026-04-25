@@ -4,6 +4,8 @@
   const estimateModal = document.getElementById("estimate-modal");
   const estimateForm = document.getElementById("estimate-quiz-form");
   const videoMessage = document.getElementById("video-message");
+  const promoModal = document.getElementById("promo-modal");
+  const promoSessionKey = "alwaysPromoDismissed";
   let lastTrigger = null;
 
   const focusableSelector = "a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex='-1'])";
@@ -30,11 +32,33 @@
     return event.target.closest(selector);
   }
 
+  function promoWasDismissed() {
+    try {
+      return window.sessionStorage.getItem(promoSessionKey) === "true";
+    } catch (error) {
+      return false;
+    }
+  }
+
+  function rememberPromoDismissed() {
+    try {
+      window.sessionStorage.setItem(promoSessionKey, "true");
+    } catch (error) {
+      // Storage can be unavailable in some privacy modes. The popup still works without it.
+    }
+  }
+
+  function closePromo() {
+    rememberPromoDismissed();
+    closeDialog(promoModal);
+  }
+
   document.querySelectorAll("[data-estimate-open], a[href='#estimate'], a[href='/#estimate'], a[href$='index.html#estimate']").forEach((trigger) => {
     trigger.addEventListener("click", (event) => {
       if (!estimateModal) return;
       event.preventDefault();
       if (videoMessage && !videoMessage.hidden) closeDialog(videoMessage);
+      if (promoModal && !promoModal.hidden) closePromo();
       openDialog(estimateModal, trigger);
     });
   });
@@ -67,10 +91,40 @@
     });
   }
 
+  document.querySelectorAll("[data-promo-close]").forEach((button) => {
+    button.addEventListener("click", closePromo);
+  });
+
+  if (promoModal) {
+    promoModal.addEventListener("click", (event) => {
+      if (!isInsideDialogClick(event, ".promo-image-card")) {
+        closePromo();
+      }
+    });
+
+    promoModal.querySelectorAll("a[href^='tel:']").forEach((link) => {
+      link.addEventListener("click", rememberPromoDismissed);
+    });
+
+    if (!promoWasDismissed()) {
+      window.setTimeout(() => {
+        const anotherDialogIsOpen =
+          (estimateModal && !estimateModal.hidden) ||
+          (videoMessage && !videoMessage.hidden) ||
+          promoWasDismissed();
+
+        if (!anotherDialogIsOpen) {
+          openDialog(promoModal);
+        }
+      }, 10000);
+    }
+  }
+
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       if (estimateModal && !estimateModal.hidden) closeDialog(estimateModal);
       if (videoMessage && !videoMessage.hidden) closeDialog(videoMessage);
+      if (promoModal && !promoModal.hidden) closePromo();
     }
   });
 
