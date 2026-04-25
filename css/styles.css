@@ -410,11 +410,15 @@ ol {
 }
 
 .logo img {
-  width: 42px;
-  height: 42px;
+  width: 46px;
+  height: 46px;
   flex: 0 0 auto;
-  border-radius: 10px;
-  background: var(--orange);
+  object-fit: contain;
+  border-radius: 0;
+  background: transparent;
+  filter:
+    drop-shadow(0 0 8px rgba(255, 176, 102, 0.22))
+    drop-shadow(0 6px 10px rgba(0, 0, 0, 0.28));
 }
 
 .nav-toggle {
@@ -2301,9 +2305,9 @@ textarea:focus {
   }
 
   .logo img {
-    width: 31px;
-    height: 31px;
-    border-radius: 8px;
+    width: 35px;
+    height: 35px;
+    border-radius: 0;
   }
 
   .logo .logo-short {
