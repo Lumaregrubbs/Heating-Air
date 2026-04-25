@@ -1911,7 +1911,7 @@ textarea:focus {
     background-color: #07192f;
     background-image:
       linear-gradient(180deg, rgba(5, 11, 20, 0.38) 0%, rgba(5, 11, 20, 0.5) 38%, rgba(7, 25, 47, 0.9) 100%),
-      url("../assets/images/phone-hero-bg.png");
+      url("../assets/images/phone-hero-bg.jpg");
     background-position: center, center top;
     background-size: cover, cover;
     background-repeat: no-repeat;
