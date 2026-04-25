@@ -316,6 +316,21 @@ ol {
   background: transparent;
   box-shadow: none;
   backdrop-filter: none;
+  isolation: isolate;
+}
+
+.site-header::before {
+  content: "";
+  position: absolute;
+  inset: -22px 0 auto;
+  height: 128px;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse at center, rgba(4, 11, 22, 0.68), rgba(4, 11, 22, 0.36) 42%, transparent 72%),
+    linear-gradient(180deg, rgba(4, 11, 22, 0.55), transparent);
+  filter: blur(16px);
+  opacity: 0.9;
+  pointer-events: none;
 }
 
 .header-inner {
@@ -330,7 +345,10 @@ ol {
   background:
     linear-gradient(90deg, rgba(16, 32, 51, 0.94), rgba(16, 32, 51, 0.74)),
     rgba(16, 32, 51, 0.84);
-  box-shadow: 0 18px 54px rgba(0, 0, 0, 0.32);
+  box-shadow:
+    0 26px 72px rgba(0, 0, 0, 0.5),
+    0 0 54px rgba(3, 11, 24, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(18px);
 }
 
@@ -342,6 +360,48 @@ ol {
   color: var(--white);
   font-weight: 900;
   line-height: 1.1;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.48);
+}
+
+.logo-site-name {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0;
+  font-weight: 950;
+  letter-spacing: 0.01em;
+}
+
+.logo-word-always,
+.logo-word-ac,
+.logo-word-dotnet {
+  transition: color 180ms ease, text-shadow 180ms ease, transform 180ms ease;
+}
+
+.logo-word-always,
+.logo-word-dotnet {
+  color: var(--orange-2);
+}
+
+.logo-word-ac {
+  color: var(--white);
+}
+
+.logo:hover .logo-word-always,
+.logo:hover .logo-word-dotnet,
+.logo:focus-visible .logo-word-always {
+  color: var(--white);
+  text-shadow: 0 0 16px rgba(255, 255, 255, 0.38);
+}
+
+.logo:focus-visible .logo-word-dotnet {
+  color: var(--white);
+  text-shadow: 0 0 16px rgba(255, 255, 255, 0.38);
+}
+
+.logo:hover .logo-word-ac,
+.logo:focus-visible .logo-word-ac {
+  color: var(--orange-2);
+  text-shadow: 0 0 16px rgba(255, 176, 102, 0.56);
 }
 
 .logo-short,
@@ -763,15 +823,15 @@ ol {
   gap: 0.42rem;
   min-height: 42px;
   padding: 0.55rem 0.7rem;
-  border: 1px solid rgba(255, 215, 106, 0.68);
+  border: 1px solid rgba(244, 124, 32, 0.72);
   border-radius: 12px;
   color: #fff8dc;
   background:
-    radial-gradient(circle at 12% 22%, rgba(255, 255, 255, 0.24), transparent 24%),
-    linear-gradient(135deg, var(--orange), #b9490d);
+    radial-gradient(circle at 12% 22%, rgba(255, 176, 102, 0.16), transparent 24%),
+    linear-gradient(135deg, rgba(14, 76, 146, 0.72), rgba(31, 126, 214, 0.34));
   box-shadow:
     0 14px 32px rgba(0, 0, 0, 0.2),
-    0 0 22px rgba(244, 124, 32, 0.3),
+    0 0 20px rgba(244, 124, 32, 0.13),
     inset 0 1px 0 rgba(255, 255, 255, 0.28);
   font-size: 0.72rem;
   font-weight: 950;
@@ -780,6 +840,25 @@ ol {
   text-transform: uppercase;
   text-align: center;
   white-space: normal;
+  cursor: pointer;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+}
+
+.hero-awards span:hover,
+.hero-awards span:focus-within {
+  transform: translateY(-2px);
+  border-color: rgba(255, 176, 102, 0.92);
+  background:
+    radial-gradient(circle at 12% 22%, rgba(255, 176, 102, 0.22), transparent 24%),
+    linear-gradient(135deg, rgba(31, 126, 214, 0.82), rgba(14, 76, 146, 0.5));
+  box-shadow:
+    0 18px 38px rgba(0, 0, 0, 0.24),
+    0 0 26px rgba(244, 124, 32, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.hero-awards span:active {
+  transform: translateY(0);
 }
 
 .hero-awards strong {
@@ -832,6 +911,21 @@ ol {
   background: rgba(255, 255, 255, 0.1);
   font-size: 0.74rem;
   text-align: center;
+  cursor: pointer;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, box-shadow 180ms ease, color 180ms ease;
+}
+
+.hero-proof-points li:hover,
+.hero-proof-points li:focus-visible {
+  color: var(--white);
+  border-color: rgba(255, 176, 102, 0.72);
+  background: rgba(244, 124, 32, 0.22);
+  box-shadow: 0 12px 26px rgba(244, 124, 32, 0.16);
+  transform: translateY(-2px);
+}
+
+.hero-proof-points li:active {
+  transform: translateY(0);
 }
 
 .btn-large {
