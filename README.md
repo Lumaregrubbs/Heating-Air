@@ -27,9 +27,11 @@ The site is built for lead generation, local SEO, and fast static deployment. It
   /assets
     /images
       desktop-hero-bg.jpeg
+      desktop-hero-bg-20260425-v2.jpg
       hero-mobile-van.jpeg
       phone-hero-bg.jpg
       phone-hero-bg.png
+      phone-hero-bg-20260425-v2.jpg
       tech-tablet.jpg
       van-wide-shot-20260425.jpeg
   /services
