@@ -26,8 +26,10 @@ The site is built for lead generation, local SEO, and fast static deployment. It
     main.js
   /assets
     /images
+      desktop-hero-bg.jpeg
       hero-homeowners-van.jpg
       hero-mobile-van.jpeg
+      phone-hero-bg.png
       tech-tablet.jpg
   /services
     ac-repair.html
