@@ -148,7 +148,7 @@ ol {
   overflow: hidden;
   background:
     linear-gradient(90deg, rgba(7, 25, 47, 0.94), rgba(7, 25, 47, 0.76)),
-    url("../assets/images/hero-homeowners-van.jpg") center / cover no-repeat;
+    url("../assets/images/van-wide-shot-20260425.jpeg") center / cover no-repeat;
 }
 
 .final-image-cta::before {
@@ -1310,7 +1310,7 @@ ol {
   color: var(--white);
   background:
     linear-gradient(160deg, rgba(14, 76, 146, 0.78), rgba(16, 32, 51, 0.84)),
-    url("../assets/images/hero-homeowners-van.jpg") center / cover no-repeat;
+    url("../assets/images/van-wide-shot-20260425.jpeg") center / cover no-repeat;
 }
 
 .modal-intro h2 {
@@ -2277,7 +2277,7 @@ textarea:focus {
     padding: 0.78rem 4.7rem 0.78rem 0.9rem;
     background:
       linear-gradient(160deg, rgba(14, 76, 146, 0.72), rgba(16, 32, 51, 0.8)),
-      url("../assets/images/hero-homeowners-van.jpg") center / cover no-repeat;
+      url("../assets/images/van-wide-shot-20260425.jpeg") center / cover no-repeat;
   }
 
   .modal-intro .eyebrow {

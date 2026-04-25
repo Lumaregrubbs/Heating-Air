@@ -27,11 +27,11 @@ The site is built for lead generation, local SEO, and fast static deployment. It
   /assets
     /images
       desktop-hero-bg.jpeg
-      hero-homeowners-van.jpg
       hero-mobile-van.jpeg
       phone-hero-bg.jpg
       phone-hero-bg.png
       tech-tablet.jpg
+      van-wide-shot-20260425.jpeg
   /services
     ac-repair.html
     ac-installation.html
