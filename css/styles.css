@@ -2093,8 +2093,8 @@ textarea:focus {
   }
 
   .video-card {
-    aspect-ratio: 3 / 4;
-    min-height: auto;
+    aspect-ratio: auto;
+    min-height: 230px;
   }
 
   .modal-shell {
