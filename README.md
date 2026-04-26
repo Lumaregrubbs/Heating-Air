@@ -46,6 +46,15 @@ The site is built for lead generation, local SEO, and fast static deployment. It
     jacksonville-fl.html
   /icons
     icon.svg
+    logo.gif
+    favicon.ico
+    favicon-16.png
+    favicon-32.png
+    favicon-48.png
+    favicon-192.png
+    favicon-512.png
+    apple-touch-icon.png
+    logo-icon.png
 ```
 
 ## How to Open Locally
