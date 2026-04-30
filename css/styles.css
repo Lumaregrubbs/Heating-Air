@@ -679,6 +679,42 @@ ol {
   letter-spacing: 0.01em;
 }
 
+.logo-company-name {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.06rem;
+  line-height: 0.92;
+}
+
+.logo-company-name span {
+  display: block;
+  white-space: nowrap;
+  transition: color 180ms ease, text-shadow 180ms ease, transform 180ms ease;
+}
+
+.logo-company-name span:first-child {
+  color: var(--orange-2);
+}
+
+.logo-company-name span:last-child {
+  color: var(--white);
+  font-size: 0.73em;
+  letter-spacing: 0.015em;
+  text-transform: lowercase;
+}
+
+.logo:hover .logo-company-name span:first-child,
+.logo:focus-visible .logo-company-name span:first-child {
+  color: var(--white);
+  text-shadow: 0 0 16px rgba(255, 255, 255, 0.38);
+}
+
+.logo:hover .logo-company-name span:last-child,
+.logo:focus-visible .logo-company-name span:last-child {
+  color: var(--orange-2);
+  text-shadow: 0 0 16px rgba(255, 176, 102, 0.56);
+}
+
 .logo-word-always,
 .logo-word-ac,
 .logo-word-dotnet {
@@ -2837,6 +2873,29 @@ textarea:focus {
     display: inline;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+
+  .logo .logo-company-name {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+    line-height: 0.9;
+  }
+
+  .logo .logo-company-name span {
+    display: block;
+    max-width: 9rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .logo .logo-company-name span:first-child {
+    font-size: 0.94rem;
+  }
+
+  .logo .logo-company-name span:last-child {
+    font-size: 0.67rem;
   }
 
   .logo::after {
