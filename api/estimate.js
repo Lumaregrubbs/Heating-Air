@@ -141,4 +141,3 @@ module.exports = async function handler(req, res) {
   res.setHeader("Location", "/thank-you.html");
   res.end();
 };
-
