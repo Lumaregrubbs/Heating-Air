@@ -634,7 +634,7 @@
         </div>
 
         <form class="modal-quiz-form" id="estimate-quiz-form" method="POST" action="api/estimate" novalidate>
-          <!-- Vercel form handling lives in /api/estimate.js. Configure RESEND_API_KEY, ESTIMATE_TO_EMAIL, and ESTIMATE_FROM_EMAIL in Vercel before using this form in production. -->
+          <!-- Form handling lives in /api/estimate.js. Configure RESEND_API_KEY in the deployment environment. Recipient and sender fall back to alwaysac.net@gmail.com and onboarding@resend.dev unless overridden. -->
           <input type="hidden" name="source" value="Homepage modal quiz">
           <div class="quiz-progress" aria-label="Estimate quiz progress">
             <span id="quiz-progress-text">Step 1 of 7</span>

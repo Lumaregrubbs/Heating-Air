@@ -90,15 +90,24 @@ The homepage estimate form is a modal quiz that posts to:
 
 The Vercel Function validates the required quiz/contact fields and sends the lead by email through Resend. It does not hard-code private API keys.
 
-Add these environment variables in Vercel before using the form in production:
+Add this environment variable in the deployment environment before using the form in production:
 
 ```text
 RESEND_API_KEY=your_resend_api_key
+```
+
+Optional overrides:
+
+```text
 ESTIMATE_TO_EMAIL=where_leads_should_go@example.com
 ESTIMATE_FROM_EMAIL=Always Heating and Air <verified-sender@yourdomain.com>
 ```
 
-`ESTIMATE_FROM_EMAIL` must be a sender verified in Resend. If these variables are missing, the function returns a clear configuration message instead of pretending the lead was captured.
+If `ESTIMATE_TO_EMAIL` is omitted, the function sends to `alwaysac.net@gmail.com`.
+
+If `ESTIMATE_FROM_EMAIL` is omitted, the function falls back to `Always Heating and Air <onboarding@resend.dev>`, which is useful for initial testing on a Resend account. For long-term production sending, replace it with a verified sender/domain inside Resend.
+
+If `RESEND_API_KEY` is missing, the function returns a clear configuration message instead of pretending the lead was captured.
 
 ## Editing Contact Info
 
