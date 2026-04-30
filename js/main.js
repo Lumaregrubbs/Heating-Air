@@ -137,6 +137,7 @@
     const error = document.getElementById("quiz-error");
     let currentStep = 0;
     let autoAdvanceTimer = null;
+    let isSubmitting = false;
 
     function activeFields() {
       return Array.from(steps[currentStep].querySelectorAll("input, textarea, select"));
@@ -168,9 +169,17 @@
       const progress = ((currentStep + 1) / steps.length) * 100;
       progressText.textContent = `Step ${currentStep + 1} of ${steps.length}`;
       progressBar.style.width = `${progress}%`;
-      backButton.disabled = currentStep === 0;
+      backButton.disabled = isSubmitting || currentStep === 0;
       submitButton.hidden = currentStep !== steps.length - 1;
+      submitButton.disabled = isSubmitting;
       error.textContent = "";
+    }
+
+    function setSubmitting(active) {
+      isSubmitting = active;
+      backButton.disabled = active || currentStep === 0;
+      submitButton.disabled = active;
+      submitButton.textContent = active ? "Sending Request..." : "Request My Free HVAC Estimate";
     }
 
     function focusStepHeading() {
@@ -208,13 +217,78 @@
       focusStepHeading();
     });
 
-    estimateForm.addEventListener("submit", (event) => {
+    estimateForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
       window.clearTimeout(autoAdvanceTimer);
+
       if (!stepIsValid() || !estimateForm.checkValidity()) {
-        event.preventDefault();
         error.textContent = "Please complete the required contact fields before submitting.";
         const invalid = estimateForm.querySelector(":invalid");
         if (invalid) invalid.focus();
+        return;
+      }
+
+      if (isSubmitting) return;
+
+      const honeypot = estimateForm.querySelector("input[name='_honey']");
+      if (honeypot && honeypot.value) {
+        return;
+      }
+
+      const formData = new FormData(estimateForm);
+      const fullName = String(formData.get("fullName") || "AlwaysAC.net Lead").trim();
+      const deliveryData = new FormData();
+
+      deliveryData.set("_subject", `New HVAC Estimate Request from ${fullName}`);
+      deliveryData.set("_template", "table");
+      deliveryData.set("_captcha", "false");
+      deliveryData.set("_next", "https://www.alwaysac.net/thank-you.html");
+      deliveryData.set("Source", "Homepage modal quiz");
+      deliveryData.set("What is going on with your system?", formData.get("systemIssue") || "Not provided");
+      deliveryData.set("What type of system do you have?", formData.get("systemType") || "Not provided");
+      deliveryData.set("How old is your system?", formData.get("systemAge") || "Not provided");
+      deliveryData.set("What best describes your situation?", formData.get("situation") || "Not provided");
+      deliveryData.set("What matters most to you?", formData.get("priority") || "Not provided");
+      deliveryData.set("When would you like service?", formData.get("serviceTiming") || "Not provided");
+      deliveryData.set("Additional details", formData.get("additionalDetails") || "Not provided");
+      deliveryData.set("Full name", formData.get("fullName") || "Not provided");
+      deliveryData.set("Phone", formData.get("phone") || "Not provided");
+      deliveryData.set("Email", formData.get("email") || "Not provided");
+      deliveryData.set("ZIP code", formData.get("zip") || "Not provided");
+      deliveryData.set("Street address", formData.get("streetAddress") || "Not provided");
+      deliveryData.set("Preferred contact method", formData.get("preferredContact") || "Not provided");
+      deliveryData.set("Preliminary estimate acknowledgement", formData.get("acknowledgement") || "Not provided");
+
+      setSubmitting(true);
+      error.textContent = "Sending your estimate request...";
+
+      try {
+        const endpoint = estimateForm.dataset.ajaxAction || estimateForm.action;
+        const response = await fetch(endpoint, {
+          method: "POST",
+          headers: {
+            Accept: "application/json"
+          },
+          body: deliveryData
+        });
+
+        let result = null;
+        try {
+          result = await response.json();
+        } catch (parseError) {
+          result = null;
+        }
+
+        if (response.ok && (!result || result.success !== false)) {
+          window.location.href = "thank-you.html";
+          return;
+        }
+
+        error.textContent = "The request did not send. Please call (904) 310-0857 or try again.";
+      } catch (sendError) {
+        error.textContent = "The request did not send. Please call (904) 310-0857 or try again.";
+      } finally {
+        setSubmitting(false);
       }
     });
 

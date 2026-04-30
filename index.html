@@ -18,7 +18,7 @@
   <link rel="icon" href="icons/favicon.ico" sizes="any">
   <link rel="icon" href="icons/favicon-32.png" type="image/png">
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
-  <link rel="stylesheet" href="css/styles.css?v=20260429-hero2">
+  <link rel="stylesheet" href="css/styles.css?v=20260430-phone1">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -633,8 +633,13 @@
           </div>
         </div>
 
-        <form class="modal-quiz-form" id="estimate-quiz-form" method="POST" action="api/estimate" novalidate>
-          <!-- Form handling lives in /api/estimate.js. Configure RESEND_API_KEY in the deployment environment. Recipient and sender fall back to alwaysac.net@gmail.com and onboarding@resend.dev unless overridden. -->
+        <form class="modal-quiz-form" id="estimate-quiz-form" method="POST" action="https://formsubmit.co/2f8df8eb4de780a3bf524023a5a5a0c0" data-ajax-action="https://formsubmit.co/ajax/2f8df8eb4de780a3bf524023a5a5a0c0" novalidate>
+          <!-- Direct static form delivery. To use another provider, replace the action and data-ajax-action endpoints. -->
+          <input type="hidden" name="_subject" value="New HVAC Estimate Request from AlwaysAC.net">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://www.alwaysac.net/thank-you.html">
+          <input class="form-honey" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
           <input type="hidden" name="source" value="Homepage modal quiz">
           <div class="quiz-progress" aria-label="Estimate quiz progress">
             <span id="quiz-progress-text">Step 1 of 7</span>

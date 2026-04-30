@@ -82,15 +82,17 @@ The `vercel.json` file includes static routing support, security headers, and ca
 
 ## Estimate Form Handling
 
-The homepage estimate form is a modal quiz that posts to:
+The homepage estimate form is a modal quiz that submits with vanilla JavaScript to a FormSubmit tokenized endpoint:
 
 ```text
-/api/estimate
+https://formsubmit.co/ajax/2f8df8eb4de780a3bf524023a5a5a0c0
 ```
 
-The Vercel Function validates the required quiz/contact fields and sends the lead by email through Resend. It does not hard-code private API keys.
+This keeps the form static, avoids exposing the Gmail address directly in the public form action, and removes the need for a Vercel email environment variable. The submission includes all quiz answers, contact fields, and the required preliminary-estimate acknowledgment. On success, visitors are redirected to `thank-you.html`.
 
-Add this environment variable in the deployment environment before using the form in production:
+FormSubmit routes the tokenized endpoint to `alwaysac.net@gmail.com`. If the production domain ever receives a separate activation email from FormSubmit, click its activation link once and future leads should deliver to that inbox.
+
+The old Vercel Function at `/api/estimate` remains in the repo as an optional Resend-based fallback if you later want server-side email delivery. To use that route instead, change the form `action` in `index.html` back to `/api/estimate` and add this environment variable in Vercel:
 
 ```text
 RESEND_API_KEY=your_resend_api_key
