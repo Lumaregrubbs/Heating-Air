@@ -322,6 +322,63 @@
     document.querySelectorAll("[data-meter]").forEach((element) => element.classList.add("is-active"));
   }
 
+  function renderGoogleStars(rating) {
+    const numericRating = Math.max(0, Math.min(5, Math.round(Number(rating) || 0)));
+    return `${"★".repeat(numericRating)}${"☆".repeat(5 - numericRating)}`;
+  }
+
+  function buildReviewCard(review) {
+    const card = document.createElement("article");
+    card.className = "google-review-card";
+
+    const stars = document.createElement("span");
+    stars.className = "review-stars";
+    stars.setAttribute("aria-label", `${review.rating || 5} out of 5 stars`);
+    stars.textContent = renderGoogleStars(review.rating || 5);
+
+    const title = document.createElement("h3");
+    title.textContent = review.authorName || "Google reviewer";
+
+    const text = document.createElement("p");
+    text.textContent = review.text || "Shared a public Google review for Always Heating and Air.";
+
+    const footer = document.createElement("footer");
+    footer.textContent = review.relativeTime ? `Google review - ${review.relativeTime}` : "Google review";
+
+    card.append(stars, title, text, footer);
+    return card;
+  }
+
+  async function loadGoogleReviews() {
+    const reviewsFeed = document.querySelector("[data-google-reviews]");
+    const reviewLinks = document.querySelectorAll("[data-google-review-link]");
+
+    if (!reviewsFeed || !/^https?:$/.test(window.location.protocol)) return;
+
+    try {
+      const response = await fetch("/api/google-reviews", {
+        headers: { Accept: "application/json" }
+      });
+      const data = await response.json();
+
+      if (data && data.reviewUrl) {
+        reviewLinks.forEach((link) => {
+          link.href = data.reviewUrl;
+        });
+      }
+
+      if (!response.ok || !data.success || !Array.isArray(data.reviews) || data.reviews.length === 0) {
+        return;
+      }
+
+      reviewsFeed.replaceChildren(...data.reviews.slice(0, 3).map(buildReviewCard));
+    } catch (error) {
+      // Keep the static fallback visible if the live Google connection is unavailable.
+    }
+  }
+
+  loadGoogleReviews();
+
   // Keep #estimate link targets from auto-opening on page load.
   // The quiz opens only after a visitor clicks an estimate CTA.
 })();

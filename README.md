@@ -111,6 +111,19 @@ If `ESTIMATE_FROM_EMAIL` is omitted, the function falls back to `Always Heating 
 
 If `RESEND_API_KEY` is missing, the function returns a clear configuration message instead of pretending the lead was captured.
 
+## Google Reviews
+
+The homepage includes a live-ready Google Reviews section. The “Leave a Google Review” button falls back to a Google search until the real Google Business Profile connection is added.
+
+To show recent public Google reviews automatically on Vercel, add these environment variables:
+
+```text
+GOOGLE_PLACES_API_KEY=your_google_places_api_key
+GOOGLE_PLACE_ID=your_google_business_profile_place_id
+```
+
+The `/api/google-reviews` route reads public Google Places review data, returns up to three public reviews, and updates the review button to the Google review-writing link. Do not hard-code the API key in the website. If the environment variables are missing, the site keeps the static placeholder copy visible and does not show fake reviews.
+
 ## Editing Contact Info
 
 Current placeholder contact details are:
