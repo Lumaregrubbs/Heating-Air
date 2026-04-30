@@ -65,11 +65,11 @@ module.exports = async function handler(req, res) {
   }
 
   const apiKey = process.env.RESEND_API_KEY;
-  const toEmail = process.env.ESTIMATE_TO_EMAIL;
-  const fromEmail = process.env.ESTIMATE_FROM_EMAIL;
+  const toEmail = process.env.ESTIMATE_TO_EMAIL || "alwaysac.net@gmail.com";
+  const fromEmail = process.env.ESTIMATE_FROM_EMAIL || "Always Heating and Air <onboarding@resend.dev>";
 
-  if (!apiKey || !toEmail || !fromEmail) {
-    htmlResponse(res, 503, "Form Delivery Is Not Configured", "The website form is ready, but Vercel email delivery still needs RESEND_API_KEY, ESTIMATE_TO_EMAIL, and ESTIMATE_FROM_EMAIL environment variables.");
+  if (!apiKey) {
+    htmlResponse(res, 503, "Form Delivery Is Not Configured", "The website form is ready, but email delivery still needs a RESEND_API_KEY environment variable.");
     return;
   }
 
@@ -91,12 +91,29 @@ module.exports = async function handler(req, res) {
     ["Source", data.source]
   ];
 
+  const text = [
+    "New HVAC Estimate Request",
+    "",
+    "A homeowner submitted the Always Heating and Air estimate quiz.",
+    "",
+    ...fields.map(([label, value]) => `${label}: ${value || "Not provided"}`)
+  ].join("\n");
+
   const html = `
-    <h1>New HVAC Estimate Request</h1>
-    <p>A homeowner submitted the Always Heating and Air estimate quiz.</p>
-    <table cellpadding="8" cellspacing="0" border="1">
-      ${fields.map(([label, value]) => `<tr><th align="left">${escapeHtml(label)}</th><td>${escapeHtml(value || "Not provided")}</td></tr>`).join("")}
-    </table>
+    <div style="font-family: Arial, Helvetica, sans-serif; color: #102033; line-height: 1.6;">
+      <h1 style="margin-bottom: 8px;">New HVAC Estimate Request</h1>
+      <p style="margin-top: 0;">A homeowner submitted the Always Heating and Air estimate quiz.</p>
+      <p style="margin: 24px 0 12px;"><strong>Lead summary</strong></p>
+      <table cellpadding="10" cellspacing="0" border="0" style="width: 100%; border-collapse: collapse; background: #f4f8fc; border: 1px solid #d7e3f3;">
+        ${fields.map(([label, value]) => `
+          <tr>
+            <th align="left" style="width: 220px; border-bottom: 1px solid #d7e3f3; padding: 10px; color: #0e4c92; background: #edf4fb;">${escapeHtml(label)}</th>
+            <td style="border-bottom: 1px solid #d7e3f3; padding: 10px; background: #ffffff;">${escapeHtml(value || "Not provided")}</td>
+          </tr>
+        `).join("")}
+      </table>
+      <p style="margin-top: 20px;">Reply directly to this email to respond to <strong>${escapeHtml(data.fullName)}</strong> at <a href="mailto:${escapeHtml(data.email)}">${escapeHtml(data.email)}</a>.</p>
+    </div>
   `;
 
   const response = await fetch("https://api.resend.com/emails", {
@@ -110,7 +127,8 @@ module.exports = async function handler(req, res) {
       to: [toEmail],
       reply_to: data.email,
       subject: `New HVAC Estimate Request from ${data.fullName}`,
-      html
+      html,
+      text
     })
   });
 
@@ -123,4 +141,3 @@ module.exports = async function handler(req, res) {
   res.setHeader("Location", "/thank-you.html");
   res.end();
 };
-
