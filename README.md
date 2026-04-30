@@ -129,7 +129,7 @@ The `/api/google-reviews` route reads public Google Places review data, returns 
 Current placeholder contact details are:
 
 - Phone: `(904) 310-0857`
-- Email: `service@example.com`
+- Email: `alwaysac.net@gmail.com`
 - Address: `Jacksonville, FL`
 - Website: `https://www.alwaysheatingair.com`
 
