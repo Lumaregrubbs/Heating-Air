@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 760" role="img" aria-labelledby="title desc">
+  <title id="title">Jacksonville skyline and river illustration</title>
+  <desc id="desc">A stylized North Florida skyline with the river, bridge lines, palms, and warm blue-orange HVAC brand colors.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0e4c92"/>
+      <stop offset="0.48" stop-color="#1f7ed6"/>
+      <stop offset="1" stop-color="#ffb066"/>
+    </linearGradient>
+    <linearGradient id="river" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#07192f"/>
+      <stop offset="0.54" stop-color="#0e4c92"/>
+      <stop offset="1" stop-color="#1f7ed6"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="74%" cy="26%" r="38%">
+      <stop offset="0" stop-color="#ffb066" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#ffb066" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="54" height="54" patternUnits="userSpaceOnUse">
+      <path d="M54 0H0v54" fill="none" stroke="#fff" stroke-opacity="0.08" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1800" height="760" fill="url(#sky)"/>
+  <rect width="1800" height="760" fill="url(#sun)"/>
+  <rect width="1800" height="760" fill="url(#grid)"/>
+  <path d="M0 430c170-55 304-34 446-64 132-28 217-106 357-98 174 10 241 119 417 103 184-16 279-114 580-77v466H0z" fill="#07192f" opacity="0.42"/>
+  <g fill="#102033" opacity="0.82">
+    <rect x="242" y="270" width="58" height="182" rx="6"/>
+    <rect x="318" y="220" width="76" height="232" rx="6"/>
+    <rect x="420" y="302" width="58" height="150" rx="6"/>
+    <rect x="505" y="185" width="95" height="267" rx="6"/>
+    <rect x="635" y="255" width="70" height="197" rx="6"/>
+    <rect x="738" y="205" width="88" height="247" rx="6"/>
+    <rect x="858" y="288" width="58" height="164" rx="6"/>
+    <rect x="956" y="164" width="92" height="288" rx="6"/>
+    <rect x="1084" y="246" width="74" height="206" rx="6"/>
+    <rect x="1190" y="300" width="62" height="152" rx="6"/>
+    <rect x="1292" y="218" width="78" height="234" rx="6"/>
+    <rect x="1406" y="270" width="58" height="182" rx="6"/>
+  </g>
+  <path d="M0 486h1800v274H0z" fill="url(#river)" opacity="0.96"/>
+  <path d="M0 526c238 42 354-34 564 6 236 45 386 108 620 65 220-40 351-138 616-94" fill="none" stroke="#fff" stroke-opacity="0.2" stroke-width="18"/>
+  <path d="M132 553c264-130 552-132 863-4 227 94 444 91 682-58" fill="none" stroke="#ffb066" stroke-opacity="0.52" stroke-width="8"/>
+  <g fill="none" stroke="#fff" stroke-opacity="0.5">
+    <path d="M410 498c150-132 343-132 493 0"/>
+    <path d="M410 498h493"/>
+    <path d="M464 498l70-98 70 98"/>
+    <path d="M594 498l70-112 70 112"/>
+    <path d="M734 498l70-98 70 98"/>
+  </g>
+  <g fill="#07192f" opacity="0.7">
+    <path d="M98 472c34-90 25-162-12-236 58 54 76 125 58 214z"/>
+    <rect x="111" y="434" width="14" height="112" rx="7"/>
+    <path d="M1535 462c30-80 21-145-11-207 52 48 68 111 53 191z"/>
+    <rect x="1548" y="425" width="13" height="108" rx="7"/>
+  </g>
+</svg>

@@ -1361,6 +1361,71 @@ ol {
   color: var(--white);
 }
 
+.van-showcase-section {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(2rem, 6vw, 4.5rem);
+  background:
+    radial-gradient(circle at 80% 10%, rgba(244, 124, 32, 0.12), transparent 30%),
+    linear-gradient(180deg, #ffffff 0%, #f4f8fc 100%);
+}
+
+.van-showcase-panel {
+  display: grid;
+  gap: clamp(1.2rem, 4vw, 2.5rem);
+  align-items: center;
+  padding: clamp(1.1rem, 4vw, 2.4rem);
+  border: 1px solid rgba(14, 76, 146, 0.16);
+  border-radius: 24px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(244, 248, 252, 0.9)),
+    var(--white);
+  box-shadow: 0 26px 70px rgba(16, 32, 51, 0.12);
+}
+
+.van-showcase-copy h2 {
+  max-width: 760px;
+  margin-bottom: 0.8rem;
+  color: var(--navy);
+  text-transform: uppercase;
+}
+
+.van-showcase-copy .lead {
+  max-width: 680px;
+}
+
+.van-showcase-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.3rem;
+}
+
+.van-showcase-art {
+  position: relative;
+  min-width: 0;
+}
+
+.van-showcase-art::before {
+  content: "";
+  position: absolute;
+  inset: 18% 4% 6%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(244, 124, 32, 0.24), rgba(31, 126, 214, 0.2));
+  filter: blur(24px);
+}
+
+.van-showcase-art img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  max-width: 820px;
+  margin-inline: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 24px 24px rgba(16, 32, 51, 0.22));
+}
+
 .hero-card,
 .card,
 .service-card,
@@ -2455,6 +2520,113 @@ textarea:focus {
     linear-gradient(180deg, #f8fcff, #ffffff);
 }
 
+.location-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: min(760px, 92vh);
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  background:
+    linear-gradient(90deg, rgba(4, 11, 22, 0.9), rgba(14, 76, 146, 0.66) 56%, rgba(244, 124, 32, 0.18)),
+    url("../assets/images/jacksonville-skyline-hero.svg") center / cover no-repeat;
+}
+
+.location-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(4, 11, 22, 0.18), rgba(4, 11, 22, 0.4)),
+    linear-gradient(90deg, rgba(4, 11, 22, 0.2), transparent 60%);
+}
+
+.location-hero-panel {
+  position: relative;
+  z-index: 1;
+  max-width: 920px;
+}
+
+.location-hero .breadcrumb,
+.location-hero .breadcrumb a,
+.location-hero .eyebrow,
+.location-hero h1,
+.location-hero .lead {
+  color: var(--white);
+}
+
+.location-hero .eyebrow {
+  color: var(--orange-2);
+}
+
+.location-hero h1 {
+  max-width: 860px;
+  text-transform: uppercase;
+  text-shadow: 0 14px 36px rgba(0, 0, 0, 0.42);
+}
+
+.location-hero .lead {
+  max-width: 760px;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.location-hero-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.2rem;
+}
+
+.location-hero-points {
+  padding: 0;
+  list-style: none;
+}
+
+.location-hero-points li {
+  padding: 0.55rem 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  background: rgba(16, 32, 51, 0.48);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.86rem;
+  font-weight: 850;
+}
+
+.location-intro-section {
+  overflow: hidden;
+}
+
+.location-intro-grid {
+  display: grid;
+  gap: clamp(1.4rem, 4vw, 3rem);
+  align-items: center;
+}
+
+.location-van-card {
+  padding: clamp(1rem, 3vw, 1.5rem);
+  border: 1px solid rgba(14, 76, 146, 0.18);
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 70% 0%, rgba(244, 124, 32, 0.12), transparent 38%),
+    linear-gradient(180deg, #ffffff, #f4f8fc);
+  box-shadow: 0 22px 54px rgba(16, 32, 51, 0.12);
+}
+
+.location-van-card img {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 18px rgba(16, 32, 51, 0.22));
+}
+
+.location-area-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
 .content-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -2592,6 +2764,29 @@ textarea:focus {
 }
 
 @media (max-width: 767px) {
+  .van-showcase-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .van-showcase-actions .btn {
+    width: 100%;
+  }
+
+  .location-hero {
+    min-height: auto;
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+  }
+
+  .location-hero h1 {
+    font-size: clamp(2.1rem, 10vw, 3rem);
+  }
+
+  .location-area-grid {
+    grid-template-columns: 1fr;
+  }
+
   .brand-proof-section::before {
     top: 1.4rem;
     right: -0.35em;
@@ -3198,6 +3393,14 @@ textarea:focus {
 }
 
 @media (min-width: 768px) {
+  .van-showcase-panel {
+    grid-template-columns: minmax(0, 0.86fr) minmax(420px, 1.14fr);
+  }
+
+  .location-intro-grid {
+    grid-template-columns: minmax(0, 0.9fr) minmax(420px, 1.1fr);
+  }
+
   .brand-proof-layout {
     grid-template-columns: 1fr;
   }
@@ -3249,6 +3452,44 @@ textarea:focus {
 }
 
 @media (min-width: 1024px) {
+  .main-nav a[href="#contact"] {
+    display: none;
+  }
+
+  .header-inner {
+    min-height: 62px;
+    gap: 0.72rem;
+    padding: 0.68rem 0.86rem;
+  }
+
+  .main-nav {
+    gap: 0.85rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+  }
+
+  .header-actions {
+    gap: 0.5rem;
+  }
+
+  .header-cta {
+    min-height: 40px;
+    padding: 0.62rem 0.85rem;
+    border-radius: 12px;
+    font-size: 0.82rem;
+  }
+
+  .header-cta::after {
+    width: 0.43rem;
+    height: 0.43rem;
+    margin-left: 0.42rem;
+  }
+
+  .logo-mark {
+    width: 46px;
+    height: 46px;
+  }
+
   .brand-proof-layout {
     grid-template-columns: minmax(0, 0.95fr) minmax(350px, 0.62fr);
   }
