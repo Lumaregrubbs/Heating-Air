@@ -1181,7 +1181,8 @@ ol {
   transform: none;
 }
 
-.hero-awards span {
+.hero-awards span,
+.hero-awards a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1204,13 +1205,16 @@ ol {
   line-height: 1.1;
   text-transform: uppercase;
   text-align: center;
+  text-decoration: none;
   white-space: normal;
   cursor: pointer;
   transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
 }
 
 .hero-awards span:hover,
-.hero-awards span:focus-within {
+.hero-awards span:focus-within,
+.hero-awards a:hover,
+.hero-awards a:focus-visible {
   transform: translateY(-2px);
   border-color: rgba(255, 176, 102, 0.92);
   background:
@@ -1222,7 +1226,8 @@ ol {
     inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
-.hero-awards span:active {
+.hero-awards span:active,
+.hero-awards a:active {
   transform: translateY(0);
 }
 
@@ -1238,6 +1243,17 @@ ol {
 .hero-awards em {
   color: rgba(255, 255, 255, 0.82);
   font-style: normal;
+}
+
+#license-info {
+  scroll-margin-top: 8rem;
+  border-radius: 10px;
+}
+
+#license-info:target {
+  color: #fff8dc;
+  background: rgba(244, 124, 32, 0.16);
+  box-shadow: 0 0 0 6px rgba(244, 124, 32, 0.16);
 }
 
 .hero-support-panel .lead {
@@ -3149,7 +3165,8 @@ textarea:focus {
     transform: none;
   }
 
-  .hero-awards span {
+  .hero-awards span,
+  .hero-awards a {
     min-height: 34px;
     padding: 0.42rem 0.55rem;
     font-size: 0.58rem;
