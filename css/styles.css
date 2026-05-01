@@ -698,9 +698,7 @@ ol {
 
 .logo-company-name span:last-child {
   color: var(--white);
-  font-size: 0.73em;
   letter-spacing: 0.015em;
-  text-transform: lowercase;
 }
 
 .logo:hover .logo-company-name span:first-child,
@@ -2999,7 +2997,7 @@ textarea:focus {
   }
 
   .logo .logo-company-name span:last-child {
-    font-size: 0.67rem;
+    font-size: 0.94rem;
   }
 
   .logo::after {
